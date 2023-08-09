@@ -1,0 +1,5 @@
+@media (min-width: 724px) {
+    .menu {
+        display: none;
+    }
+}

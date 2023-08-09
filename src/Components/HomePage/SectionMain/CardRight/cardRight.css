@@ -1,0 +1,66 @@
+.cardRight{
+    /* background-color: aqua; */
+    width: 239px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardRight .user-container{
+    width: 200px;
+    height: 150px;
+    background-color: #E3F0FF;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 12px 10px;
+}
+
+.cardRight .user-container .user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 9px;
+}
+
+.cardRight .user-container .user span{
+    color: var(--dark, #1C1C1C);
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ButtonSmallBlue, .ButtonSmallWhite {
+    width: 180px;
+}
+
+.block-container{
+    width: 200px;
+    height: 95px;
+    border-radius: 6px;
+    padding: 16px 40px 0 16px;
+}
+
+.block-container.one{
+    background-color: #F38332;
+}
+
+.block-container.two{
+    background: #55BDC3;
+}
+
+.Heading6{
+    color: #fff !important;
+}
+
+@media (max-width: 950px) {
+    .cardRight{
+        display: none;  
+    }
+}

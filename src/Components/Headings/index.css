@@ -1,0 +1,80 @@
+.root{
+    --font-inter:'Inter';  
+    /* font-family: 'Inter', sans-serif; */
+}
+
+.heading-1{
+    /* font-family: var(--font-inter); */
+    font-weight: 600;
+    font-size: 48px;
+    line-height: normal;
+    font-size: 16px;
+}
+
+.heading-2 {
+    color: var(--base-color-dark, #1C1C1C);
+    font-family: "Inter";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.heading-3 {
+    color: var(--base-color-dark, #1C1C1C);
+    font-family: "Inter";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.heading-4 {
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; 
+    letter-spacing: -0.2px;
+}
+
+.heading-5{
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.heading-6 {
+    /* font-family: var(--font-inter); */
+    font-family: 'Inter';    
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #fff;
+}
+
+.subheading-1{
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+.subheading-2{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.subheading-3 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}

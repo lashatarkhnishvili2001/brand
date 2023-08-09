@@ -1,0 +1,31 @@
+
+.banner {
+    /* width: 664px; */
+    /* width: 56%; */
+    width: 100%;
+    margin: 20px 15px;    
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.bannerBox{
+    position: absolute;
+    top: 56px;
+    left: 44px;
+}
+
+.ButtonNormalWhite {
+    margin-top: 17px;
+    color: #000;
+}
+
+
+
+/* @media (max-width: 768px) {
+    .banner img {
+        width: 365px;    
+    }
+} */

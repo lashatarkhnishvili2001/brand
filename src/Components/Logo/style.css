@@ -1,0 +1,57 @@
+.logo {
+    display: flex;
+    /* width: 150px; */
+    width: 10%;
+    height: 46px;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;   
+    top:1px;
+    left: -1px;
+    opacity: 80px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.logo-icon-one{
+    position: absolute;
+    width: 38.26px;
+    height: 40.17px;
+    top: 1.91px;
+    left: 0.96px;
+    background-color: #0D6EFD;
+    z-index: 2;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-icon-two {
+    position: absolute;
+    width: 36.35px;
+    height: 40.17px;
+    top: 1.91px;
+    left: 7.65px;
+    background-color: #0d6dfd1d;
+    z-index: 1;
+    border-radius: 20%;
+}
+
+.title-brand{
+    display: flex;
+    margin: 30px;
+    width: 77px;
+    height: 21px;
+    align-items: center;
+    color: #8CB7F5;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 600;
+}
+

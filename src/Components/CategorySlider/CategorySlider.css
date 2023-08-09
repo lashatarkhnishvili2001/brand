@@ -1,0 +1,16 @@
+.categorySlider {
+    width: 100%; 
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* gap: 20 px; */
+}
+
+.categorySlider .boxSlider {
+    width: auto  ;
+    /* margin: 0 20px; */
+    height: 36px;
+    gap: 20px;
+    background: #EFF2F4;
+    border-radius: 6px;
+    color: #0D6EFD;
+}

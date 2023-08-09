@@ -1,0 +1,49 @@
+.ButtonSmallBlue, .ButtonNormalBlue, .ButtonLargeBlue,
+.ButtonSmallWhite, .ButtonNormalWhite, .ButtonLargeWhite{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.ButtonSmallBlue, .ButtonNormalBlue, .ButtonLargeBlue{
+    background: var(--primary-gradient, linear-gradient(180deg, #127FFF 0%, #0067FF 100%));
+    color: #fff;
+}
+.ButtonSmallWhite, .ButtonNormalWhite, .ButtonLargeWhite{
+    border: 1px solid var(--gray-300, #DEE2E7);
+    background: var(--white, #FFF);
+    color: #127FFF;
+}
+
+.ButtonSmallBlue, .ButtonSmallWhite {
+    height: 30px;
+    padding: 0px 10px;
+}
+
+.ButtonNormalBlue, .ButtonNormalWhite {
+    height: 40px;
+    padding: 0px 16px;
+}
+
+.ButtonLargeBlue, .ButtonLargeWhite {
+    height: 54px;
+    padding: 0px 20px;
+}
+
+.button span {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: "Inter";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button span::first-letter {
+    text-transform: capitalize;  
+}
