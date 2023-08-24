@@ -1,14 +1,14 @@
+import { category } from '../../../../script/categoryData';
 import './category.css'
-import {data} from '../../../../script/categoryData'
 
 const Category = () => {
 
-    
+
     return (
         <>
             <div className="category">
-                {data.map((value, index) =>  {
-                    return (
+                {category.map((value, index) =>  {
+                    return index < 9 && (
                         <div className="box" key={index}>
                             <span  >{value.CategoryName}</span>
                         </div>

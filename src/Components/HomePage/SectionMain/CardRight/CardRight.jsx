@@ -12,14 +12,16 @@ const CardRight = () => {
             <img src={userImg} alt="" />
             <span>Hi, user <br/> let's get stated</span>
           </div>
-        <ButtonSmallBlue text={'Join now'}/>
-        <ButtonSmallWhite text={'Log in'}/>
+          <ButtonSmallBlue text={'Join now'}/>
+          <ButtonSmallWhite text={'Log in'}/>
         </div>
-        <div className="block-container one">
-          <Heading6 text={"Get US $10 off with a new supplier"} />
-        </div>
-        <div className="block-container two">
-          <Heading6 text={'Send quotes with supplier preferences'} />
+        <div className="block-row">
+          <div className="block-container one">
+            <Heading6 text={"Get US $10 off with a new supplier"} />
+          </div>
+          <div className="block-container two">
+            <Heading6 text={'Send quotes with supplier preferences'} />
+          </div>
         </div>
     </div>
   )

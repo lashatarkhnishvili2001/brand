@@ -3,10 +3,15 @@ header{
     padding: 0 10%;
 }
 
-.menu-container{
+/* .menu-container{
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 18px;
+} */
+
+.searchSmall{
+    width: 100%;
 }
 
 .header-container {
@@ -15,6 +20,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 @media (max-width:1100px){

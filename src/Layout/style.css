@@ -1,0 +1,10 @@
+.CategorySlider {
+    padding: 0 10%;
+}
+
+@media (max-width: 950px) {
+    .CategorySlider{
+        padding: 0 15px;
+    }
+
+}

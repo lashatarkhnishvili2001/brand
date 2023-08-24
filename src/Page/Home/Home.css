@@ -1,20 +1,28 @@
 .main {
     width: 100%;
     padding: 20px 10%;
-    background: #DEE2E7;
+    background: #F7FAFC;
     padding-top: 20px;
+}
+
+@media (max-width: 1200px) {
+    .main {
+        width: 100%;
+        padding: 15px 8%;
+    }
 }
 
 @media (max-width: 1000px) {
     .main {
+        width: 100%;
         padding: 10px 5%;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .main {
+        width: 100%;
         padding: 0;
-        
     }
 }
 

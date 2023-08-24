@@ -1,5 +1,8 @@
 import './index.css';
 
+export const Heading = ({ text }) => {
+    return <h1 className="heading">{text}</h1>;
+};
 export const Heading1 = ({ text }) => {
     return <h1 className="heading-1">{text}</h1>;
 };
@@ -18,6 +21,9 @@ export const Heading5 = ({ text }) => {
 export const Heading6 = ({ text }) => {
     return <h5 className="heading-6">{text}</h5>;
 };
+export const Subheading = ({ text }) => {
+    return <p className="subheading">{text}</p>;
+};
 export const Subheading1 = ({ text }) => {
     return <p className="subheading-1">{text}</p>;
 };
@@ -28,3 +34,7 @@ export const Subheading2 = ({ text }) => {
 export const Subheading3 = ({ text }) => {
     return <p className="subheading-3">{text}</p>;
     };
+
+export const Subheading4 = ({ text }) => {
+    return <p className="subheading-4">{text}</p>;
+};

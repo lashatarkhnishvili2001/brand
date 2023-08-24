@@ -1,17 +1,16 @@
+
 .flex-item{
-    display: flex;
+    /* display: flex;   */
     width: 100%;
 }
-
+    
 .flex-item .Api {
-    width: calc(100% / 5);  
+    width: calc(100% / 5);      
     height: 235px;
-    display: flex;
+    display: flex!important;
     flex-direction: column;
     align-items: center;
     border-left: 1px solid rgba(0, 0, 0, 0.279);
-
-
 }
 
 .flex-item .Api  img {
@@ -27,7 +26,7 @@
 .flex-item .Api  .apiName {
     color: var(--base-color-dark, #1C1C1C);
     text-align: center;
-    font-family: Inter;
+    font-family: "Inter";
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -40,6 +39,8 @@
 }
 
 .flex-item .Api  .price {
+    display: flex;
+    justify-content: center;
     border-radius: 29px;
     background: #FFE3E3;
 }
@@ -53,4 +54,28 @@
     gap: 10px;
     flex-shrink: 0;
     color:red;
+}
+
+/* @media (max-width: 1200px) {
+    .flex-item{
+        width: 95%;
+    }
+} */
+
+.slick-prev {
+    left: 0px !important;
+    z-index: 1;
+}
+.slick-next {
+    right: 8px !important;
+    z-index: 1;
+}
+.slick-next:before,
+.slick-prev:before {
+content: "" !important;
+}
+.next-slick-arrow,
+.prev-slick-arrow {
+color: #000000;
+font-size: 30px;
 }

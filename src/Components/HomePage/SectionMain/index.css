@@ -11,16 +11,9 @@
 
 @media (max-width: 950px) {
     .sectionMain-container{
-        display: flex;
         justify-content: center;
-
-    }
-}
-
-@media (max-width: 768px) {
-    .sectionMain-container{
-        border: none;
-        display: flex;
         flex-direction: column;
+        border: none;
     }
 }
+

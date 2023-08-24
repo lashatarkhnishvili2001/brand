@@ -1,0 +1,27 @@
+.recommend-section{
+    width: 100%;
+    margin: 24px 0;
+}
+
+.recommend-list-container{
+    width: 100%;
+    margin-top: 20px;
+}
+.recommend-list-container .recommendItems-ul {
+    width: 100% ;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+@media (max-width: 500px) {
+    .recommend-list-container .recommendItems-ul {
+        display: grid;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+}
+

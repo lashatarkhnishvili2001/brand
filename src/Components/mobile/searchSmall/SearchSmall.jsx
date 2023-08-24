@@ -1,6 +1,5 @@
 import './searchSmall.css';
 import Search from '../../../Assets/images/search.png';
-import { Form } from 'react-router-dom';
 
 const SearchSmall = () => {
     return (

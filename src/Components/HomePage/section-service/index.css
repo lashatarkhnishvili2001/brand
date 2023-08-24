@@ -1,0 +1,15 @@
+.service-container {
+    width: 100%;
+}
+
+.service-list-container{
+    width: 100%;
+    margin-top: 24px;
+}
+
+.service-list-container .service-list-ul{ 
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

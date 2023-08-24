@@ -2,7 +2,7 @@
 .banner {
     /* width: 664px; */
     /* width: 56%; */
-    width: 100%;
+    /* width: 100%; */
     margin: 20px 15px;    
     position: relative;
 }
@@ -24,8 +24,10 @@
 
 
 
-/* @media (max-width: 768px) {
-    .banner img {
-        width: 365px;    
+@media (max-width: 768px) {
+    .bannerBox{
+        top: 15px;
+        left: 15px;
     }
-} */
+    
+}
