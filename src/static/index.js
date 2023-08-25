@@ -15,3 +15,8 @@ export {ReactComponent as Group2} from '../Assets/images/footer/Group2.svg';
 
 // email
 export {ReactComponent as EmailSvg} from '../Assets/Icon/email.svg';
+
+
+// seller 
+export {ReactComponent as Verified_user} from '../Assets/Icon/verified_user.svg';
+export {ReactComponent as Language} from '../Assets/Icon/language.svg';

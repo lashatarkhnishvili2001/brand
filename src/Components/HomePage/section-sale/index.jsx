@@ -5,15 +5,15 @@ import './index.css';
 import React from 'react';
 
 const SelectionSale = () => {
-    const [timerDays, setTimesDays] = useState(0);
-    const [timerHours, setTimesHours] = useState('');
+    const [timerDays, setTimesDays] = useState();
+    const [timerHours, setTimesHours] = useState();
     const [timerMinutes, setTimesMinutes] = useState();
     const [timerSeconds, setTimesSeconds] = useState();
 
     let interval = useRef() ;
 
     const stateTimer = () => {
-        const countdownDate = new Date('May 10,2023').getTime();
+        const countdownDate = new Date(2023, 8, 16, 23, 59, 59).getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();

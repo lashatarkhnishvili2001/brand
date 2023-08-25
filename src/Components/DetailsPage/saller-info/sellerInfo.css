@@ -1,0 +1,57 @@
+.seller-container{
+    width: 280px;
+    height: 325px;
+    background-color: violet;
+    padding: 20px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-300, #DEE2E7);
+    background: var(--base-color-white, #FFF);
+    box-shadow: 0px 1px 2px 0px rgba(56, 56, 56, 0.08);
+}
+
+.seller-container .sellerRow {
+    display: flex;
+    gap: 11px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #E0E0E0;;
+}
+.seller-container .sellerRow .sellerCol{
+    border-radius: 4px;
+    background: #C6F3F1;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.seller-container .sellerRow .sellerCol .heading-3{
+    color: rgba(76, 167, 167, 0.60);
+    font-weight: 600;
+    line-height: 24px; /* 85.714% */
+    letter-spacing: -0.2px;
+}
+.seller-container .sellerRow .sellerColTitle{
+
+}
+.seller-container .sellerRow .sellerColTitle .subheading{
+    color: black;
+}
+.seller-container .seller-location ul{
+    padding: 5px 0;
+}
+.seller-container .seller-location ul li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 17px;
+    padding: 5px 0;
+}
+.seller-container .seller-location ul li img{
+    width: 21px;
+    height: 15px;   
+}
+
+.seller-container .ButtonNormalBlue, 
+.seller-container .ButtonNormalWhite {
+    width: 100%;
+}

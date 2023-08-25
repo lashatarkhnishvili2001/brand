@@ -1,0 +1,48 @@
+.content-main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-300, #DEE2E7);
+    background: #FFF;
+    flex-wrap: wrap;
+}
+
+.images-page{
+    padding: 15px;
+    background-color: aqua;
+}
+.content-main .info{
+    width: 430px;
+    padding: 0 20px;
+}
+
+.content-main .info .price-background {
+    background-color: #FFF0DF;
+    display: flex;
+    align-items: center;
+}
+.content-main .info .price {
+    padding: 16px 48px 14px 16px;
+}
+.content-main .info .price span{
+    color: red;
+}
+.bgLine { 
+    width: 1px;
+    height: 44px;
+    border: solid 1px #BDC1C8;
+}
+
+.content-main .short-info ul li {
+    display: flex;
+    gap: 50px;
+    padding: 16px 0; 
+}
+.content-main .short-info ul li .oneBox {
+    /* width: 100px; */
+}
+.content-main .short-info ul li .twoBox {
+    /* width: 100%; */
+}

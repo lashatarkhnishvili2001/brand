@@ -21,6 +21,9 @@ export const Heading5 = ({ text }) => {
 export const Heading6 = ({ text }) => {
     return <h5 className="heading-6">{text}</h5>;
 };
+export const Heading7 = ({ text }) => {
+    return <h5 className="heading-7">{text}</h5>;
+};
 export const Subheading = ({ text }) => {
     return <p className="subheading">{text}</p>;
 };

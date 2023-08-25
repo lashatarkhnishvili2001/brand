@@ -66,6 +66,13 @@
     line-height: normal;
     color: #fff;
 }
+.heading-7 {
+    font-family: 'Inter';    
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
 
 .subheading {
     color: #8B96A5;

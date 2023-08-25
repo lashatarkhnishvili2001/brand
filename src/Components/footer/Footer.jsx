@@ -4,12 +4,12 @@ import './footer.css';
 import Logo from '../Logo';
 import { Heading5, Subheading, Subheading1 } from '../Headings';
 import { footer } from '../../script/categoryData';
+import SingleFooter from './Singlefooter/Singlefooter';
 
 const Footer = () => {
     const [toggle, setToggle] = useState(false);
 
     return (
-        
         <>
         <footer>
             <div className='footer-container'>
@@ -26,15 +26,7 @@ const Footer = () => {
                         <a href='#'><Youtube/> </a>
                     </div>
                 </div>
-                {/* <div className='box'>
-                    <Heading5 text={'About'}/>
-                    <ul>
-                        <li><Subheading text={'About US'} /></li>
-                        <li><Subheading text={'Find store'} /></li>
-                        <li><Subheading text={'Categories Cares'} /></li>
-                        <li><Subheading text={'Blogs'} /></li>
-                    </ul>
-                </div> */}
+        
                 {footer.map((item) => {
                     return (
                         <div className='box'>
@@ -50,6 +42,10 @@ const Footer = () => {
                         </div>
                     )
                 })}
+
+                {/* {footer.map((item) => {
+                    return <SingleFooter  list={item.name} title={item.title}/>
+                })} */}
 
                 <div className='box'>
                     <Heading5 text={'Get app'}/>
