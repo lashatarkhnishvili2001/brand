@@ -5,13 +5,7 @@ export {ReactComponent as InventorySvg} from '../Assets/Icon/inventory_2.svg';
 export {ReactComponent as SecuritySvg} from '../Assets/Icon/security.svg';
 
 // footer
-export {ReactComponent as Facebook} from '../Assets/images/footer/facebook3.svg';
-export {ReactComponent as Instagram} from '../Assets/images/footer/instagram3.svg';
-export {ReactComponent as Linkedin} from '../Assets/images/footer/linkedin3.svg';
-export {ReactComponent as Twitter} from '../Assets/images/footer/twitter3.svg';
-export {ReactComponent as Youtube} from '../Assets/images/footer/youtube3.svg';
-export {ReactComponent as Group} from '../Assets/images/footer/Group.svg';
-export {ReactComponent as Group2} from '../Assets/images/footer/Group2.svg';
+
 
 // email
 export {ReactComponent as EmailSvg} from '../Assets/Icon/email.svg';

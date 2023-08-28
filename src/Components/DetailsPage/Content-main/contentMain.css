@@ -1,18 +1,50 @@
-.content-main{
+.content-main {
     width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid var(--gray-300, #DEE2E7);
     background: #FFF;
-    flex-wrap: wrap;
+    border: 1px solid var(--gray-300, #DEE2E7);
+    border-radius: 6px;
+    flex-wrap: wrap;    
+}   
+.images-page{
+    width: 380px;
 }
 
-.images-page{
+.images-page img{
+    width: 345px;   
     padding: 15px;
-    background-color: aqua;
 }
+
+.images-page .images-container {
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    align-items: flex-start;
+    gap: 9px;
+    flex-wrap: wrap;
+
+}
+.images-page .images-container .images {
+    width: calc(100% / 6);
+    /* height: 56px; */
+    border: solid 1px #BDC1C8;
+    border-radius: 4px;
+    display: flex;
+
+}
+.images-page .images-container .images:active {
+    border: solid 1px red;
+
+}
+.images-page .images-container .images img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
 .content-main .info{
     width: 430px;
     padding: 0 20px;
@@ -41,8 +73,9 @@
     padding: 16px 0; 
 }
 .content-main .short-info ul li .oneBox {
-    /* width: 100px; */
+    width: 100px;
 }
 .content-main .short-info ul li .twoBox {
-    /* width: 100%; */
+    width: 100%;
 }
+

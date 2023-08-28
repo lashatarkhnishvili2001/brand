@@ -1,19 +1,23 @@
-import { Facebook ,Group,Group2,Instagram, Linkedin, Twitter, Youtube} from '../../static';
+import {footer, Facebook ,Group,Group2,Instagram, Linkedin, Twitter, Youtube} from '../../static/footer';
 import React, { useState } from 'react'
 import './footer.css';
 import Logo from '../Logo';
 import { Heading5, Subheading, Subheading1 } from '../Headings';
-import { footer } from '../../script/categoryData';
+
 import SingleFooter from './Singlefooter/Singlefooter';
 
 const Footer = () => {
     const [toggle, setToggle] = useState(false);
 
+    const handleToggle = () => {
+        setToggle(prev => !prev)
+    }
+
     return (
         <>
         <footer>
             <div className='footer-container'>
-                <div className='box'>
+                <div className='box-brand'>
                     <Logo/>
                     <div className="describe">
                         <Subheading1 text={'Best information about the company gies here but now lorem ipsum is'}/>
@@ -29,31 +33,20 @@ const Footer = () => {
         
                 {footer.map((item) => {
                     return (
-                        <div className='box'>
-                            <Heading5 text={item.title}/>
-                            <ul>
-                                {item.name.map((item)=> {
-                                    return(
-                                        <li><Subheading text={item.name} /></li>
-                                    )
-                                })}
-                            
-                            </ul>
-                        </div>
+                        <SingleFooter list={item.list} title={item.title} />
                     )
                 })}
 
-                {/* {footer.map((item) => {
-                    return <SingleFooter  list={item.name} title={item.title}/>
-                })} */}
-
-                <div className='box'>
+                
+                {/* <div className='box'>
                     <Heading5 text={'Get app'}/>
+                    <img src={Chevron} alt="chevron" />
+
                     <ul>
                         <li> <Group/> </li>
                         <li> <Group2/></li>
                     </ul>
-                </div>
+                </div> */}
                 
             
             

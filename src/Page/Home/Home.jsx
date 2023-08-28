@@ -1,4 +1,5 @@
 import CategorySlider from "../../Components/CategorySlider"
+import Email from "../../Components/Email"
 import SectionMain from "../../Components/HomePage/SectionMain"
 import BlockItemsGroup from "../../Components/HomePage/block-items-group"
 import Country from "../../Components/HomePage/section-country"
@@ -22,9 +23,8 @@ const Home = () => {
             <Recommend/>
             <Service/>
             <Country/>
-
-            
         </div>
+            <Email/>
         </>
     )
 }
