@@ -1,17 +1,18 @@
-import {footer, Facebook ,Group,Group2,Instagram, Linkedin, Twitter, Youtube} from '../../static/footer';
-import React, { useState } from 'react'
+import { Facebook, Instagram, Linkedin, Twitter, Youtube} from '../../static/icons';
+import { footer } from '../../static/footer';
+import React from 'react'
 import './footer.css';
 import Logo from '../Logo';
-import { Heading5, Subheading, Subheading1 } from '../Headings';
+import {Subheading1 } from '../Headings';
 
 import SingleFooter from './Singlefooter/Singlefooter';
 
 const Footer = () => {
-    const [toggle, setToggle] = useState(false);
+    // const [toggle, setToggle] = useState(false);
 
-    const handleToggle = () => {
-        setToggle(prev => !prev)
-    }
+    // const handleToggle = () => {
+    //     setToggle(prev => !prev)
+    // }
 
     return (
         <>
@@ -33,27 +34,13 @@ const Footer = () => {
         
                 {footer.map((item) => {
                     return (
-                        <SingleFooter list={item.list} title={item.title} />
+                        <SingleFooter key={item.id} list={item.list} title={item.title} />
                     )
-                })}
-
-                
-                {/* <div className='box'>
-                    <Heading5 text={'Get app'}/>
-                    <img src={Chevron} alt="chevron" />
-
-                    <ul>
-                        <li> <Group/> </li>
-                        <li> <Group2/></li>
-                    </ul>
-                </div> */}
-                
-            
-            
+                })}            
             </div>
         </footer>
         </>
     )
 }
 
-export default Footer
+export default Footer;

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Heading4, Subheading1, Subheading3 } from '../../Headings';
-import CardItem from './card-item/CardItem';
+// import CardItem from './card-item/CardItem';
+import CardItem from './card-item';
 import './index.css';
 import React from 'react';
 

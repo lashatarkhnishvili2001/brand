@@ -2,46 +2,9 @@ import './cardItem.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import laptop from '../../../../Assets/images/laptops.png';
-
+import { data } from '../../../../static/products';
 const CardItem = () => {
-    const data = [
-        {
-            img : laptop,
-            ApiName:'phone',
-            price: '-333%',
-        },
-        {
-            img : laptop,
-            ApiName:'phone',
-            price: '-50%',
-        },
-        {
-            img : laptop,
-            ApiName:'phone',
-            price: '20%',
-        },
-        {
-            img : laptop,
-            ApiName:'phone',
-            price: '20%',
-        },
-        {
-            img : laptop,
-            ApiName:'phone',
-            price: '-733%',
-        },
-        {
-            img : laptop,
-            ApiName:'phone',
-            price: '-333%',
-        },
-        {
-            img : laptop,
-            ApiName:'phone dmo',
-            price: '-40%',
-        }
-    ]
+    
 
     const settings = {
         // dots: false,
@@ -120,4 +83,4 @@ const CardItem = () => {
     )
 }
 
-export default CardItem
+export default CardItem;

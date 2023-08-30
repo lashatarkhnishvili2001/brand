@@ -1,89 +1,105 @@
-export {ReactComponent as Facebook} from '../Assets/images/footer/facebook3.svg';
-export {ReactComponent as Instagram} from '../Assets/images/footer/instagram3.svg';
-export {ReactComponent as Linkedin} from '../Assets/images/footer/linkedin3.svg';
-export {ReactComponent as Twitter} from '../Assets/images/footer/twitter3.svg';
-export {ReactComponent as Youtube} from '../Assets/images/footer/youtube3.svg';
-// export {ReactComponent as Group} from '../Assets/images/footer/Group.svg';
-// export {ReactComponent as Group2} from '../Assets/images/footer/Group2.svg';
+import { Group, Group2 } from "./icons"
 
 export const footer = [
-    
     {
+        id:1,
         title: 'about',
         list: [
             {
+                id:1,
                 name: 'About Us'
             },
             {
+                id:2,
                 name: 'Find store'
             },
             {
+                id:3,
                 name: 'Categories'
             },
             {
+                id:4,
                 name: 'Blogs'
             }
         ]
     },
-    {
+    {   
+        id:2,
         title: "Partnership",
         list: [
-            {
+            {   
+                id:1,
                 name: 'About Us'
             },
             {
+                id:2,
                 name: 'Find store'
             },
             {
+                id:3,
                 name: 'Categories'
             },
             {
+                id:4,
                 name: 'Blogs'
             }
         ]
     },
     {
+        id:3,
         title: "Information",
         list: [
             {
+                id:1,
                 name: 'Help Center'
             },
             {
+                id:2,
                 name: 'Money Refund'
             },
             {
+                id:3,
                 name: 'Shipping'
             },
             {
+                id:4,
                 name: 'Contact us'
             }
         ]
     },
     {
+        id:4,
         title: "For users",
         list: [
             {
+                id:1,
                 name: 'Login'
             },
             {
+                id:2,
                 name: 'Register'
             },
             {
+                id:3,
                 name: 'Settings'
             },
             {
+                id:4,
                 name: 'My Orders'
             }
         ]
     },
     {
+        id:5,
         title: "Get app",
         list: [
             {
-                // name: Group
+                id:1,
+                name: <Group/>
             },
             {
-                // name: Group2
+                id:2,
+                name: <Group2/>
             },
             
         ]

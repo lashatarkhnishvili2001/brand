@@ -8,42 +8,42 @@ import './style.css'
 import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
     return (
-        <div class="navbar-container">
-            <ul class="navbar-ul">
-                <li class="navbar-li">
+        <div className="navbar-container">
+            <ul className="navbar-ul">
+                <li className="navbar-li">
                     <NavLink className={"nav-link"} to="/Profile">
-                        <div class="item-container">
-                            <div class="image-container">
+                        <div className="item-container">
+                            <div className="image-container">
                                 <img src={Profile} alt="" />
                             </div>
                             <span>profile</span>
                         </div>
                     </NavLink>
                 </li>
-                <li class="navbar-li display-none ">
+                <li className="navbar-li display-none ">
                     <NavLink className={"nav-link"} to="/">    
-                        <div class="item-container">
-                            <div class="image-container">
+                        <div className="item-container">
+                            <div className="image-container">
                                 <img src={Message} alt="" />
                             </div>
                             <span>message</span>
                         </div>
                     </NavLink>
                 </li>
-                <li class="navbar-li display-none">
+                <li className="navbar-li display-none">
                     <NavLink className={"nav-link"} to="/">
-                        <div class="item-container">
-                            <div class="image-container">
+                        <div className="item-container">
+                            <div className="image-container">
                                 <img src={Orders} alt="" />
                             </div>
                             <span>orders</span>
                         </div>
                     </NavLink>
                 </li>
-                <li class="navbar-li active">
+                <li className="navbar-li active">
                     <NavLink className={"nav-link"} to="/Cart">
-                        <div class="item-container cart-my-cart" id="cart-icon">
-                            <div class="image-container" >
+                        <div className="item-container cart-my-cart" id="cart-icon">
+                            <div className="image-container" >
                                 <img src={Cart} alt="" />
                             </div>
                             <span>my cart</span>

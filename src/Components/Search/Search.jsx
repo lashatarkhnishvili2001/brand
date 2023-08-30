@@ -4,9 +4,9 @@ import './style.css';
 
 const Search = () => {
     return (
-            <div class="search-container">
+            <div className="search-container">
                 
-                    <div class="search">
+                    <div className="search">
                         <input type="text" placeholder="search"/>
                         <span>All category<img src={Chevron} alt='chevron'/> </span>
                         <button type='button'>Search</button>

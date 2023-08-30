@@ -22,3 +22,7 @@ export const ButtonNormalWhite = ({ text }) => {
 export const ButtonLargeWhite = ({ text }) => {
     return <button className="ButtonLargeWhite button"> <span>{text}</span></button>;
 }
+
+export const ButtonLargeWhiteIcon = ({ text, icon }) => {
+    return <button className="ButtonLargeWhiteIcon button"><div className="iconBox">{icon}</div> <span>{text}</span></button>;
+}

@@ -42,8 +42,26 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    
 }
 
 .button span::first-letter {
     text-transform: capitalize;  
+}
+
+
+.ButtonLargeWhiteIcon{
+    display: flex;
+    height: 40px;
+    padding: 9px 21px 9px 9px;
+    align-items: center;
+    gap: 17px;
+    flex-shrink: 0;
+    background: #fff;
+    border: none;
+}
+
+.ButtonLargeWhiteIcon .iconBox {
+    width: 22px;
+    height: 22px;
 }
