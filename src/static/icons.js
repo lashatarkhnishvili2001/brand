@@ -26,4 +26,9 @@ export {ReactComponent as FavoriteSvg} from '../Assets/Icon/favorite_border.svg'
 
 
 // details 
-export {ReactComponent as CheckSvg} from '../Assets/Icon/check.svg'
+export {ReactComponent as CheckSvg} from '../Assets/Icon/check.svg';
+
+//products 
+export {ReactComponent as StarSvg} from '../Assets/Icon/star-svgrepo-com.svg';
+export {ReactComponent as HeartSvg} from '../Assets/Icon/heart-svgrepo-com.svg';
+

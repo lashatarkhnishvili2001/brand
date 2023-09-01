@@ -13,6 +13,8 @@ const BlockDetail = () => {
         data: {}
     });
 
+    console.log(chosenDetails.data)
+
 
     useEffect(() =>{
         const currentElement = detailsArray.find((item) => item.id === detailsID.toLocaleLowerCase()); 
@@ -53,18 +55,24 @@ const BlockDetail = () => {
                         <div className="detail-item-right">
                             <Subheading1 text={'#8786867'}/>
                         </div>
-                        {/* {chosenDetails.data.name.map((item) =>{
+                        {chosenDetails.data?.name && 
                             <ul>
                                 <li>
                                     <div className="detail-item-left">
-                                        <Subheading1 text={'model'}/>
+                                        <Subheading1 text={chosenDetails.data?.name.model}/>
                                     </div>
                                 </li>
                             </ul>
-                        })} */}
+                        }
                     </div>
                     <div className='detail-feature'>
-                        <CheckSvg/> <Subheading text={chosenDetails.data.feature}/>
+                        {chosenDetails.data?.feature?.map((item, index) => {
+                            return <React.Fragment key={index}>
+                                <div>
+                                <CheckSvg/> <Subheading text={item}/>
+                                </div>
+                            </React.Fragment>
+                        })}
                     </div>
 
                 </div>

@@ -15,25 +15,22 @@
 
 .RelatedProducts .products-container .products-item-ul {
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    align-items: flex-start; */
     gap: 20px;
-    display: flex;
-    margin: 20px;
+
+    display: grid!important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
-@media (max-width: 1000px) {
-    .RelatedProducts .products-container .products-item-ul{
-            justify-content: center;
-    }
-} 
+
 
 @media (max-width: 1000px) {
-    .products-container .products-item-ul {
-        display: grid!important;
+    .RelatedProducts .products-container .products-item-ul {
+        /* display: grid!important;
         overflow-x: scroll;
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory; */
     }
 } 

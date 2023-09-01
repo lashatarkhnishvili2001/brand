@@ -1,11 +1,10 @@
 .Block-detail {
     background-color: #fff;
-    width: 880px;
-    height: 618px;
+    /* width: 880px; */
+    /* height: 618px; */
     border: 1px solid var(--gray-300, #DEE2E7);
     margin: 20px 0;
 }
-
 .detail-two-box{
     padding: 20px;
     display: flex;
@@ -23,7 +22,6 @@
     border: solid 2px var(--gray-200, #EFF2F4);
     padding: 6px 0px 6px 10px;
 }
-
 
 .detail-description {
     width: 100%;

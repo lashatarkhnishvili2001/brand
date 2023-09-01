@@ -1,10 +1,13 @@
 .productsItem-li {
-    width: calc(100% / 6 - 22px);
+    /* width: calc(100% / 6 - 22px); */
+    width: 100%;
 
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-
+    /* display: flex; */
+    /* flex-direction: column; */
+    grid-row: 1;
+    width: 220px;
+    height: unset;
 }
 .productsItem-li .tile {
     margin: 14px 0 7px 0;
@@ -28,10 +31,9 @@
 }
 
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .productsItem-li {
         width: calc(100% / 5);
-
     }
 }
 

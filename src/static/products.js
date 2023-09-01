@@ -54,6 +54,24 @@ export const products = [
         price: '$32.00-$40.00',
     },
     {
+        id: 123,
+        img : phone,
+        title:'xiaomi redmi 8 t',
+        price: '$32.00-$40.00',
+    },
+    {
+        id: 123,
+        img : phone,
+        title:'xiaomi redmi 8 t',
+        price: '$32.00-$40.00',
+    },
+    {
+        id: 123,
+        img : phone,
+        title:'xiaomi redmi 8 t',
+        price: '$32.00-$40.00',
+    },
+    {
         id: 121,
         img : laptop,
         title:'xiaomi redmi 8 t',
@@ -90,4 +108,13 @@ export const products = [
         price: '$32.00-$40.00',
     },
     
+]
+
+
+export const ProductsMain = [
+    {
+        id: 1,
+        img: phone,
+        
+    }
 ]

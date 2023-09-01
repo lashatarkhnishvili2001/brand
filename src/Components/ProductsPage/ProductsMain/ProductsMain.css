@@ -1,0 +1,18 @@
+.ProductsMain{
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ProductsMain .left-main{
+    width: 230px;
+    height: 100vh;
+    background-color: red;
+}
+
+.ProductsMain .right-main{
+    width: calc(100% - 230px - 22px);
+}
+

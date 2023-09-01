@@ -14,7 +14,6 @@ const ProductsItem = () => {
                     </div>
                     <div className="tile">
                         <Subheading1 text={value.title} />
-
                     </div>
                     <Subheading1 text={value.price} />
                 </li>
