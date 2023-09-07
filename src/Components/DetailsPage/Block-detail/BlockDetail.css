@@ -1,9 +1,8 @@
 .Block-detail {
     background-color: #fff;
-    /* width: 880px; */
+    max-width: 880px;
     /* height: 618px; */
     border: 1px solid var(--gray-300, #DEE2E7);
-    margin: 20px 0;
 }
 .detail-two-box{
     padding: 20px;

@@ -8,20 +8,29 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 16px 16px 16px 16px;
+    padding-left:16px;
     list-style-type: none;
     gap: 35px;
 }
+
 .details-navigation li .heading-5 {
     color: var(--gray-500, #8B96A5);
     line-height: normal;
     text-transform: capitalize;
 }
-.details-navigation li .heading-5:hover {
-    color:red
+
+.detail-nav-link .heading-5{
+    padding: 20px 0;
+
 }
-.detail-nav-link li .detail-nav-link.active{
-    background-color: blue;
-    border: solid 3px red;
-    color: yellow;
+
+.detail-nav-link.active .heading-5{
+    border-bottom: 2px solid #0D6EFD;
+    color: #0D6EFD;
+}
+
+.detail-nav-link:not(.active) .heading-5:hover {
+border-bottom: 2px solid #0D6EFD;
+color: #0D6EFD;
+opacity: 0.5;
 }

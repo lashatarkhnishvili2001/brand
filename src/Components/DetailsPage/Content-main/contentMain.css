@@ -84,6 +84,65 @@
     width: 100%;
 }
 
+.info .ButtonLargeWhiteIcon.button span{
+    color: #00B517;  
+    font-size: 16px;
+}
+
+.info .disPlay {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.info .disPlay .start-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px ;
+}
+.info .disPlay .start-container ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.info .disPlay .start-container ul li {
+    list-style-type: none;
+}
+.info .disPlay .start-container ul li svg{
+    width: 15px;
+    height: 15px;
+    fill: #D4CDC5;
+}
+.info .disPlay .start-container ul li.active svg{
+    fill: #FF9017;
+}
+.info .disPlay .start-container .start-number{
+    color: #FF9017;
+    padding-left: 7px;
+    font-size: 16px;
+}
+
+.info .disPlay .message {
+    display: flex;
+    justify-content: flex-start;
+}
+.info .disPlay .message .subheading-1{
+    white-space: nowrap;
+}
+.info .disPlay .message svg{
+    margin-right: 9px;
+}
+
+.info .disPlay .info-dot{
+    width: 6px;
+    height: 6px;
+    background-color: #DBDBDB;
+    border-radius: 50%;
+    margin: 0 7px;
+}
+
+
 @media (max-width: 868px) {
     .content-main {
         justify-content: center;

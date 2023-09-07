@@ -5,6 +5,14 @@
     padding-top: 20px;
 }
 
+.details-main .details-row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
 @media (max-width: 1200px) {
     .details-main {
         width: 100%;

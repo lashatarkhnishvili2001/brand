@@ -1,0 +1,35 @@
+.RectangleDetail{
+    width: 280px;
+    border-radius: 6px;
+    border: 1px solid var(--gray-300, #DEE2E7);
+    background: #FFF;
+}
+
+.RectangleDetail ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.RectangleDetail ul li {
+    list-style-type: none;
+}
+
+.RectangleDetail ul li .listRow{
+    padding: 8px 16px;
+    display: flex;
+    gap: 16px;
+}
+.RectangleDetail ul li .listRow .image{
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    border: 1px solid var(--base-color-gray-200, #E0E0E0);
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listRow .destination .black .subheading{
+    color: #000;
+}

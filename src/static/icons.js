@@ -1,3 +1,5 @@
+import { Form } from 'react-router-dom';
+
 // service
 export {ReactComponent as ArrowSvg} from '../Assets/Icon/send.svg';
 export {ReactComponent as SearchSvg} from '../Assets/Icon/search.svg';
@@ -27,8 +29,11 @@ export {ReactComponent as FavoriteSvg} from '../Assets/Icon/favorite_border.svg'
 
 // details 
 export {ReactComponent as CheckSvg} from '../Assets/Icon/check.svg';
+export {ReactComponent as MessageSvg} from '../Assets/Icon/message.svg';
+export {ReactComponent as Shopping_basketSvg} from '../Assets/Icon/shopping_basket.svg';
+
 
 //products 
 export {ReactComponent as StarSvg} from '../Assets/Icon/star-svgrepo-com.svg';
 export {ReactComponent as HeartSvg} from '../Assets/Icon/heart-svgrepo-com.svg';
-
+export {ReactComponent as ExpandMoreSvg} from '../Assets/Icon/expand_more.svg';

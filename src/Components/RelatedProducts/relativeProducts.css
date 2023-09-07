@@ -6,23 +6,23 @@
     background: #FFF;
     
 }
+.RelatedProducts .heading-4{ 
+    padding: 20px 0 0 22px;
+}
 
 .RelatedProducts .products-container {
     width: 100%;
-    margin-top: 20px;
-    
+    padding: 22px;    
 }
 
 .RelatedProducts .products-container .products-item-ul {
     width: 100%;
-    /* display: flex;
-    justify-content: flex-start;
-    align-items: flex-start; */
+    padding-bottom: 15px;
     gap: 20px;
-
     display: grid!important;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
+
 }
 
 

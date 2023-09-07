@@ -113,6 +113,14 @@
     left: 0;
 }
 
+@media (max-width: 1250px) {
+    .Products-list-container .products-list-ul .products-list-li {
+        width: calc(100% / 2);
+    }
+}
 
-
-
+@media (max-width: 500px) {
+    .Products-list-container .products-list-ul .products-list-li {
+        width: 100%;
+    }
+}

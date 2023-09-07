@@ -3,6 +3,8 @@ import './contentMain.css'
 import SellerInfo from '../saller-info'
 import { Heading4, Heading7, Subheading1, Subheading4 } from '../../Headings'
 import { data } from '../../../static/details'
+import { CheckSvg, MessageSvg, Shopping_basketSvg, StarSvg } from '../../../static/icons'
+import { ButtonLargeWhiteIcon } from '../../Buttons'
 
 const ContentMain = () => {
 
@@ -24,7 +26,34 @@ const ContentMain = () => {
                 </div>
             
             <div className="info">
+                <ButtonLargeWhiteIcon text={'In stock'} icon={<CheckSvg/>}/>
                 <Heading4 text={'Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle'}/>
+                <div className='disPlay'> 
+                        <div className="start-container">
+                                    <ul>
+                                        <li className='active'>
+                                            <StarSvg/>
+                                        </li>
+                                        <li className='active'>
+                                            <StarSvg/>
+                                        </li>
+                                        <li className='active'>
+                                            <StarSvg/>
+                                        </li>
+                                        <li>
+                                            <StarSvg/>
+                                        </li>
+                                        <li>
+                                            <StarSvg/>
+                                        </li>
+                                    </ul>
+                                    <span className='start-number'>7.5</span>
+                        </div>
+                        <div className="info-dot"></div>
+                        <div className="message"><MessageSvg/><Subheading1 text={'32 reviews'}/></div>
+                        <div className="info-dot"></div>
+                        <div className="message"><Shopping_basketSvg/><Subheading1 text={'154 sold'}/></div>
+                </div>
                 <div className="price-background">
                     <div className="price">
                         <span><Heading7 text={'$98.00'} /></span>
