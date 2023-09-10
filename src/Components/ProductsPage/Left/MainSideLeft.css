@@ -1,4 +1,4 @@
-.filters-list {
+.filters-list{
     width: 100%;
 }
 
@@ -49,7 +49,6 @@
     display: flex;
     gap: 10px;
 }
-
 
 @media (max-width: 950px) {
     .filters-list {

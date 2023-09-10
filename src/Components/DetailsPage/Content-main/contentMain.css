@@ -35,8 +35,8 @@
 
 }
 
-.images-page .images-container .images:active {
-    border: solid 1px red;
+.images-page .images-container .images:hover {
+    border: solid 1px blue;
 }
 
 .images-page .images-container .images img{
@@ -148,4 +148,10 @@
         justify-content: center;
         
     }
+}
+
+.imageMain{
+    width: 200px;
+    height: 200px;
+    background-color: red;
 }

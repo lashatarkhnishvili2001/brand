@@ -8,16 +8,25 @@
 
 .ProductsMain .left-main{
     width: 230px;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .ProductsMain .right-main{
     width: calc(100% - 230px - 22px);
 }
 
+
 @media (max-width: 767px) {
+    .ProductsMain{
+        flex-direction: column;
+    }
     .ProductsMain .left-main {
+        width: 100%;
+        padding: 0 30px;
         display: none;
+    }
+    .ProductsMain .left-main.active{
+        display: block;
     }
     .ProductsMain .right-main{
         width: 100%;

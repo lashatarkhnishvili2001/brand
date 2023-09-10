@@ -1,0 +1,51 @@
+.bannerBlue {
+    width: 100%;
+    /* height: 120px; */
+    background: #005ADE;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.bannerBlue .bannerColumn {
+    width: 745px; 
+    height: 120px;
+    background: #237CFF;
+    clip-path: polygon(0 0, 93% 0, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.bannerBlue .ButtonNormalWhite {
+    margin-right: 45px;
+    background: #FF9017;
+    border: none;
+}
+
+@media (max-width: 1200px) {
+    .bannerBlue .bannerColumn {
+    width: 545px; 
+    
+    }
+}
+
+@media (max-width: 768px) {
+    .bannerBlue {
+        background: #44acab;
+        background-image: linear-gradient(90deg, #237CFF, #237CFF, #237CFF, #005ADE, #005ADE);
+        padding: 10px;
+        justify-content: center;
+    }
+    .bannerBlue .bannerColumn {
+        padding: 10px;
+        text-align: center;
+        clip-path:none;
+        background: none;
+        height: auto;
+    }
+
+}

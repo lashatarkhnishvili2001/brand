@@ -111,10 +111,35 @@ export const products = [
 ]
 
 
-export const ProductsMain = [
+export const ProductsList = [
     {
-        id: 1,
+        id: 'kmkdkekmfkl',
         img: phone,
-        
+        price:{
+            ins: '$99.05',
+            del: '$1128.00'
+        },
+        product: 'GoPro HERO6 4K Action Camera - Black',
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+        id: 'kmkdkekmfkl',
+        img: phone,
+        price:{
+            ins: '$99.05',
+            del: '$1128.00'
+        },
+        product: 'GoPro HERO6 4K Action Camera - Black',
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+    },
+    {
+        id: 'kmkdkekmfkl',
+        img: phone,
+        price:{
+            ins: '$99.95',
+            del: '$1128.00'
+        },
+        product: 'GoPro HERO6 4K Action Camera - Black',
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
     }
 ]

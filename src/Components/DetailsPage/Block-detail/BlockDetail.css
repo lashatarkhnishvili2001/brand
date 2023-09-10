@@ -1,13 +1,15 @@
 .Block-detail {
     background-color: #fff;
-    max-width: 880px;
+    width: 880px;
     /* height: 618px; */
     border: 1px solid var(--gray-300, #DEE2E7);
 }
+
 .detail-two-box{
     padding: 20px;
     display: flex;
 }
+
 .detail-two-box .detail-item-left{
     width: 204px;
     height: 36px;
@@ -15,6 +17,7 @@
     padding: 10px 10px;
     text-transform: capitalize;
 }
+
 .detail-two-box .detail-item-right{
     width: 204px;
     height: 36px;
@@ -27,8 +30,17 @@
     padding: 20px;
 }
 
+.detail-description span{
+    overflow: hidden;
+}
+
+.m-readMore.more{
+    height: fit-content;
+}
+
 .detail-feature{
     padding: 20px;
     display: flex;
     gap: 7px;
 }
+

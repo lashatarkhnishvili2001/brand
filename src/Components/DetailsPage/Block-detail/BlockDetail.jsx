@@ -40,13 +40,20 @@ const BlockDetail = () => {
         }
     }, [chosenDetails, navigate] )
 
+
+    // const [isOpen, setIsOpen] = useState(false);    
+
     return (
         <div className="Block-detail">
             {chosenDetails.found ? (
                 <div className="content-container">
                     <Navigation detailInformation={detailsArray} />
                     <div className="detail-description">
-                        <Subheading text={chosenDetails.data.description} />
+                        {/* <span className={`grd m-readMore ${isOpen ? 'more' : '' } `}> */}
+                            <Subheading text={chosenDetails.data.description} />
+                        {/* </span> */}
+                        {/* <button onClick={() => setIsOpen(prev => !prev)}>{isOpen ? 'read less' : 'read more...'}  </button> */}
+
                     </div>
                     <div className="detail-two-box">
                         <div className="detail-item-left">

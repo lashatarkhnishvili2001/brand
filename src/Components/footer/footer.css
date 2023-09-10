@@ -7,7 +7,7 @@ footer {
     width: 100%;
     display: flex;
     gap: 50px;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
@@ -103,9 +103,9 @@ footer {
         width: 100%;
         padding: 10px;
         gap: 15px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        /* flex-direction: column; */
+        /* justify-content: center;
+        align-items: center;  */
     }
 
     .box-container ul li{
@@ -123,5 +123,9 @@ footer {
     
     .box-container.action li{
         display: block;
+    }
+    .box-container{
+        width: calc(95% / 2);
+        /* width: 100%; */
     }
 }

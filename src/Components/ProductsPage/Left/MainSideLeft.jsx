@@ -8,9 +8,7 @@ import FilterItemFeatures from './FilterItem-Features'
 import FilterPrice from './Filter-Price'
 
 const MainSideLeft = () => {
-    const [toggle, setToggle] = useState(false);
     
-
     return (
         <div className="filters-list">
             <div className="filters-list-ul">

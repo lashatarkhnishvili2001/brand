@@ -4,7 +4,8 @@ import SellerInfo from '../saller-info'
 import { Heading4, Heading7, Subheading1, Subheading4 } from '../../Headings'
 import { data } from '../../../static/details'
 import { CheckSvg, MessageSvg, Shopping_basketSvg, StarSvg } from '../../../static/icons'
-import { ButtonLargeWhiteIcon } from '../../Buttons'
+import { ButtonLargeWhiteIcon } from '../../Buttons';
+import Slider from "react-slick";
 
 const ContentMain = () => {
 
@@ -14,6 +15,7 @@ const ContentMain = () => {
     return (
         <section>
             <div className="content-main" key={item.id}>
+
                 <div className='images-page' >
                         <img src={item.src[value]} alt="" />
                     <div className="images-container">

@@ -4,6 +4,7 @@ import './details.css'
 import BlockDetail from '../../Components/DetailsPage/Block-detail/BlockDetail'
 import RelatedProducts from '../../Components/RelatedProducts'
 import RectangleDetail from '../../Components/DetailsPage/Rectangle-detail'
+import BannerBlue from '../../Components/Banner-blue'
 
 
 
@@ -17,8 +18,8 @@ const Details = () => {
                 <BlockDetail/>
                 <RectangleDetail/>
             </div>
-
             <RelatedProducts/>
+            <BannerBlue/>
         </div>
     )
 }
