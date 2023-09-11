@@ -38,3 +38,8 @@ export {ReactComponent as ExpandMoreSvg} from '../Assets/Icon/expand_more.svg';
 export {ReactComponent as GridViewSvg} from '../Assets/Icon/gridview.svg';
 export {ReactComponent as ListViewSvg} from '../Assets/Icon/listview.svg';
 export {ReactComponent as FilterSvg} from '../Assets/Icon/filter_alt.svg';
+
+
+//cart 
+export {ReactComponent as RemoveSvg} from '../Assets/Icon/remove.svg';
+export {ReactComponent as AddSvg} from '../Assets/Icon/add.svg';

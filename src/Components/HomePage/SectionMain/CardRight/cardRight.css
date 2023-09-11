@@ -35,7 +35,8 @@
     line-height: normal;
 }
 
-.ButtonSmallBlue, .ButtonSmallWhite {
+.user-container .ButtonSmallBlue, 
+.user-container .ButtonSmallWhite {
     width: 180px;
 }
 
