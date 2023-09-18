@@ -139,6 +139,23 @@
     font-size: 18px;
 }
 
+.cart-pay-info .cart-pay-methods{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.cart-pay-info .cart-pay-methods .cart-pay-method{
+    width: 34px;
+    height: 22px;
+    border-radius: 5px;
+    border: 1px solid #EEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media (max-width: 850px) {
     .cart-row {

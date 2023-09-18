@@ -6,7 +6,7 @@ import { Verified_user, Language, FavoriteSvg } from '../../../static/icons';
 import { ButtonLargeWhiteIcon, ButtonNormalBlue, ButtonNormalWhite } from '../../Buttons';
 const SellerInfo = () => {
     return (
-        <div>
+        <div className='seller-main'>
         <div className="seller-container">
             <div className="sellerRow">
                 <div className="sellerCol"><Heading3 text={'R'} /></div>

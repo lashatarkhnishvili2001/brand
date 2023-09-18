@@ -47,7 +47,10 @@
 
 .content-main .info{
     width: 430px;
-    padding: 0 20px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .content-main .info .price-background {
@@ -95,11 +98,12 @@
     justify-content: flex-start;
     align-items: center;
 }
+
 .info .disPlay .start-container{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px ;
+    padding: 10px 0;
 }
 .info .disPlay .start-container ul {
     display: flex;
@@ -141,17 +145,66 @@
     border-radius: 50%;
     margin: 0 7px;
 }
+.info .info-mobile-price{
+    display: none;
+}
+.info .info-mobile-price .heading-6{
+    color: #FA3434;
+}
+
+.info .info-mobile-button {
+    display: none;
+    gap: 10px;
+}
+
+.info .info-mobile-button .info-FavoriteIcon{
+    border: 1px solid #DEE2E7;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.info .info-mobile-button .ButtonNormalBlue{
+    width: 100%;
+}
 
 
 @media (max-width: 868px) {
     .content-main {
         justify-content: center;
-        
     }
+    .Block-detail {
+        display: none;
+    }
+    
 }
 
-.imageMain{
-    width: 200px;
-    height: 200px;
-    background-color: red;
+
+@media (max-width: 400px) {
+    .content-main .info{
+        padding: 10px 0;
+    }
+    
+    .content-main .info .price-background {
+        display: none;
+    }
+    .ButtonLargeWhiteIcon {
+        display: none;
+    }
+    .info > div.disPlay {
+        order: -1;
+    }
+    .content-main .short-info ul li {
+        gap: 0px;
+        /* padding: 16px 0; */
+    }
+    .info .info-mobile-price{
+        display: block;
+    }
+    .info .info-mobile-button {
+        display: flex;
+    }
 }

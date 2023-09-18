@@ -1,3 +1,4 @@
+
 .seller-container{
     width: 280px;
     height: 325px;
@@ -60,4 +61,13 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+@media (max-width: 1415px) {
+    .seller-main{
+        width: 100%;
+    }
+    .seller-container{
+        width: 100%;
+    }
 }

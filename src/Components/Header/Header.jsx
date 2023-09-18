@@ -8,7 +8,7 @@ import './style.css'
 const Header = () => {
     return (
         <>
-        <header>
+        <main>
             <div className="header-container">
                 <Menu/>
                 <Logo/>
@@ -18,7 +18,7 @@ const Header = () => {
             <div className="searchSmall">
                 <SearchSmall/>
             </div>
-        </header>
+        </main>
     </>
     )
 }

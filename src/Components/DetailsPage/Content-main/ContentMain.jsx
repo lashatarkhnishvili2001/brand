@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './contentMain.css'
 import SellerInfo from '../saller-info'
-import { Heading4, Heading7, Subheading1, Subheading4 } from '../../Headings'
+import { Heading4, Heading6, Heading7, Subheading1, Subheading4 } from '../../Headings'
 import { data } from '../../../static/details'
-import { CheckSvg, MessageSvg, Shopping_basketSvg, StarSvg } from '../../../static/icons'
-import { ButtonLargeWhiteIcon } from '../../Buttons';
+import { CheckSvg, FavoriteSvg, MessageSvg, Shopping_basketSvg, StarSvg } from '../../../static/icons'
+import { ButtonLargeWhiteIcon, ButtonNormalBlue } from '../../Buttons';
 import Slider from "react-slick";
 
 const ContentMain = () => {
@@ -12,10 +12,11 @@ const ContentMain = () => {
     const [item] = useState(data);
     const [value, setValue] = useState(0);
 
+
     return (
         <section>
             <div className="content-main" key={item.id}>
-
+                
                 <div className='images-page' >
                         <img src={item.src[value]} alt="" />
                     <div className="images-container">
@@ -26,7 +27,6 @@ const ContentMain = () => {
                         ))}
                     </div>
                 </div>
-            
             <div className="info">
                 <ButtonLargeWhiteIcon text={'In stock'} icon={<CheckSvg/>}/>
                 <Heading4 text={'Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle'}/>
@@ -55,6 +55,15 @@ const ContentMain = () => {
                         <div className="message"><MessageSvg/><Subheading1 text={'32 reviews'}/></div>
                         <div className="info-dot"></div>
                         <div className="message"><Shopping_basketSvg/><Subheading1 text={'154 sold'}/></div>
+                </div>
+                <div className="info-mobile-price">
+                    <Heading6 text={'$129.95'}/>
+                </div>
+                <div className="info-mobile-button">
+                    <ButtonNormalBlue text={'Send inquiry'}/>
+                    <div className="info-FavoriteIcon">
+                        <FavoriteSvg />
+                    </div>
                 </div>
                 <div className="price-background">
                     <div className="price">

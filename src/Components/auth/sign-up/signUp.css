@@ -1,0 +1,117 @@
+*:focus {
+    outline: none;
+}
+
+.user-container{
+    width: 57%;
+    height: 100%;  
+}
+
+.user-container .sign-name {
+    color: #000;
+    font-family: 'Poppins';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.user-container .sign-p {
+    color: #000;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-container .sign-p .auth-click {
+    padding-left: 5px;
+    color: #0C21C1;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.user-container form {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    position: relative;
+    font-family: 'Poppins';
+    margin-top: 42px;
+}
+
+.form-group::first-letter {
+    margin-top: 52px;
+}
+
+.form-group .label{
+    color: #000;
+    display: inline-block;
+    width: 100%;
+    font-size: 13px;
+    line-height: 20px;
+    text-transform: capitalize;
+}
+
+.form-group .input-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 2px #000842;;
+}
+
+.form-group .input-container .icon-container{
+    display: flex;
+    width: 17px;
+    height: 17px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group .label-name {
+    color: #999;
+    font-family: 'Poppins';
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.form-group .input-container input{
+    width: calc(100% - 40px);
+    background-color: transparent;
+    padding: 10px 0 10px 10px;
+    border: none;
+    color: #000;
+    font-size: 16px;
+}
+
+.form-group .input-container input::placeholder{
+    color: #000;
+}
+
+.user-container .auth-button-container {
+    width: 100%;
+    margin-top: 58px;
+}
+.user-container .auth-button-container .ButtonLargeBlue{
+    width: 100%;
+    border-radius: 32px;
+    background: #0C21C1;
+    box-shadow: 0px 4px 26px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+@media (max-width: 1100px) {
+    .user-container{
+        width: 100%;
+    }
+}

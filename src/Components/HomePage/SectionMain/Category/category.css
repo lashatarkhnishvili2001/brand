@@ -7,6 +7,12 @@
     margin: 20px 0;
 }
 
+.category ul {
+    list-style-type: none;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;  
+}
+
 .category .box{
     width: 230px;
     height: 40px;
@@ -22,7 +28,6 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-
 }
 
 .category .box span::first-letter{
@@ -33,9 +38,6 @@
     background-color:#E5F1FF;
     border-radius: 5px;
 }
-
-
-
 
 @media (max-width: 1200px) {
     .category{ display: none;}

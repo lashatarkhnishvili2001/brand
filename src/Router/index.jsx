@@ -5,11 +5,13 @@ import Profile from "../Page/Profile";
 import DetailsRouter from "./DetailsRouter";
 import NotFound from "../Page/Home/NotFound";
 import Products from "../Page/Products/Products";
+import Auth from "../Page/Auth";
 
 const Router = () => {
 return (
         <Routes>
             <Route path="/" element={<Home/>} />
+            <Route path="/authorization" element={<Auth/>} />
             <Route path="/details/*" element={<DetailsRouter/>} />
             <Route path="/Products" element={<Products/>} />
             <Route path="/profile" element={<Profile/>} />

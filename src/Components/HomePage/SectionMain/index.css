@@ -1,6 +1,5 @@
 .sectionMain-container {
     width: 100%;
-    /* height: 400px; */
     display: flex;
     justify-content: space-between;
     /* padding: 20px 18%; */
@@ -8,6 +7,13 @@
     border-radius: 8px;
     background: #FFFFFF;
 }
+
+@media (min-width: 1200px ) {
+    .sectionMain-container {
+        height: 400px;
+    }
+}
+
 
 @media (max-width: 950px) {
     .sectionMain-container{

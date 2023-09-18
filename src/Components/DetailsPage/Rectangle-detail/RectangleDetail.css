@@ -41,3 +41,12 @@
 .listRow .destination .black .subheading{
     color: #000;
 }
+
+@media (max-width: 1100px) {
+    .RectangleDetail {
+        width: 100%;
+    }
+    .RectangleDetail ul {
+        flex-direction: row;
+    }
+}

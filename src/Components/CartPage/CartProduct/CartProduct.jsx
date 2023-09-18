@@ -3,7 +3,7 @@ import { Heading, Heading4, Heading6, Subheading } from '../../Headings'
 import shirt from  '../../../Assets/images/CartBitmap.png'
 import { ButtonLargeBlue, ButtonSmallWhite } from '../../Buttons'
 import './CartProduct.css'
-import { AddSvg, RemoveSvg } from '../../../static/icons'
+import { AddSvg, LogoPPaySvg, LogoPaySvg, PaymentPaySvg, RemoveSvg, VisaPaySvg } from '../../../static/icons'
 
 const CartProduct = () => {
     return (
@@ -99,7 +99,9 @@ const CartProduct = () => {
                 <div className="cart-pay-col"> 
                     <div className="cart-pay-info">
                         <div className="cart-pay-row">
-                            <Subheading  text={'Subtotal:'}/>
+                            <Subheading  text={'Subtotal:'} classnames = '' styles={{
+                                color:'red'
+                            }}/>
                             <Subheading text={'$1403.97'} />
                         </div>
                         <div className="cart-pay-row">
@@ -115,6 +117,23 @@ const CartProduct = () => {
                             <Heading4 text={'$1357.97'}/>
                         </div>
                         <ButtonLargeBlue text={'Checkout'} />
+                        <div className="cart-pay-methods">
+                            <div className="cart-pay-method">
+                                <PaymentPaySvg />
+                            </div>
+                            <div className="cart-pay-method">
+                                <LogoPaySvg />
+                            </div>
+                            <div className="cart-pay-method">
+                                <LogoPPaySvg />
+                            </div>
+                            <div className="cart-pay-method">
+                                <VisaPaySvg />
+                            </div>
+                            <div className="cart-pay-method">
+                                <PaymentPaySvg />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

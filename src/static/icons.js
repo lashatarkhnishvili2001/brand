@@ -43,3 +43,22 @@ export {ReactComponent as FilterSvg} from '../Assets/Icon/filter_alt.svg';
 //cart 
 export {ReactComponent as RemoveSvg} from '../Assets/Icon/remove.svg';
 export {ReactComponent as AddSvg} from '../Assets/Icon/add.svg';
+export {ReactComponent as ShoppingCartSvg} from '../Assets/Icon/shopping_cart.svg';
+
+// cart pay
+export {ReactComponent as LogoPaySvg} from '../Assets/Icon/Pay/Logo.svg';
+export {ReactComponent as  LogoPPaySvg} from '../Assets/Icon/Pay/LogoP.svg';
+export {ReactComponent as  PaymentPaySvg} from '../Assets/Icon/Pay/payment.svg';
+export {ReactComponent as  VisaPaySvg } from '../Assets/Icon/Pay/visa.svg';
+
+
+// Auth
+export {ReactComponent as  PasswordSvg } from '../Assets/Icon/padlock 1.svg';
+export {ReactComponent as  EmailSvgSvg } from '../Assets/Icon/message 1.svg';
+export {ReactComponent as  InvisibleSvg } from '../Assets/Icon/invisible 1.svg';
+export {ReactComponent as  UserSvg } from '../Assets/Icon/user 1.svg';
+export {ReactComponent as  FacebookSvg } from '../Assets/Icon/Facebook.svg';
+export {ReactComponent as  AppleSvg } from '../Assets/Icon/apple.svg';
+export {ReactComponent as  GoogleSvg } from '../Assets/Icon/google.svg';
+
+

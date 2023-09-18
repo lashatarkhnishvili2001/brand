@@ -53,5 +53,10 @@
         background: none;
         height: auto;
     }
-
+    .bannerBlue .bannerColumn {
+        align-items: center;
+    }
+    .bannerBlue .ButtonNormalWhite {
+        margin-right: 0px;
+    }
 }

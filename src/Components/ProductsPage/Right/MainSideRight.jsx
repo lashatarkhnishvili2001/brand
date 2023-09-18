@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import img from '../../../Assets/images/phone.png';
-import {GridViewSvg, HeartSvg, ListViewSvg, StarSvg} from '../../../static/icons';
+import {GridViewSvg, ListViewSvg} from '../../../static/icons';
 import './MainSideRight.css'
-import { Heading6, Heading7, Subheading, Subheading1 } from '../../Headings';
+import { Heading6, Subheading1 } from '../../Headings';
 import ProductsCol from './produstsColumn';
 import ProductsRow from './productsRow';
 const MainSideRight = ({view, setView} ) => {
@@ -40,7 +38,7 @@ const MainSideRight = ({view, setView} ) => {
                     </div>
                 </div>
 
-                {view === true ? (
+                {view ? (
                     <ProductsRow/>
                 ) : ( 
                     <ProductsCol/> 

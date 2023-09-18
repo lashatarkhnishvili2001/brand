@@ -48,10 +48,10 @@
     margin-top: 7px;
     color: rgba(139, 150, 165, 1);
 }
+
 .navbar-li .item-container span::first-letter {
     text-transform: capitalize;
 }
-
 
 .nav-link.active span {
     color: #0067FF;
