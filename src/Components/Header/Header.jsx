@@ -8,7 +8,7 @@ import './style.css'
 const Header = () => {
     return (
         <>
-        <main>
+        <header>
             <div className="header-container">
                 <Menu/>
                 <Logo/>
@@ -18,21 +18,9 @@ const Header = () => {
             <div className="searchSmall">
                 <SearchSmall/>
             </div>
-        </main>
+        </header>
     </>
     )
 }
 
 export default Header;
-
-{/* <div className="menu-container">
-                <Menu/>
-                <div className="header-container">
-                    <Logo/>
-                    <Search/>
-                    <Navbar/>
-                </div>
-            </div>
-            <div className="searchSmall">
-                <SearchSmall/>
-            </div> */}

@@ -1,15 +1,18 @@
-import React from 'react'
-import { AppleSvg, EmailSvgSvg, FacebookSvg, GoogleSvg, InvisibleSvg, PasswordSvg } from '../../../static/icons'
+import React, { useState } from 'react'
+import { AppleSvg, EmailSvgSvg, FacebookSvg, GoogleSvg, PasswordSvg } from '../../../static/icons'
 import './signIn.css'
 import { ButtonLargeBlue } from '../../Buttons'
-const SignIn = ({setAction}) => {
+const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
+    
+    const [password, setPassword] = useState("");
+
     return (
         <div className="user-container">
-            <h1 className='sign-name'>sign in</h1>
+            <h1 className='sign-name'>Sign in</h1>
             <p className='sign-p'> If you don’t have an account register <br/> You can  <span className='auth-click' onClick={() => { setAction(true)}}> Register here !</span></p>
                 <form> 
                     <div className="form-group">
-                        <label className='label-name'>Email</label>
+                        <label  for="email" className='label-name'>Email</label>
                         <div className="input-container">
                             <div className="icon-container left">
                                 <EmailSvgSvg />
@@ -18,14 +21,14 @@ const SignIn = ({setAction}) => {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className='label-name'>Password</label>
+                        <label  for="password" className='label-name'>Password</label>
                         <div className="input-container">
                             <div className="icon-container left">
                                 <PasswordSvg />
                             </div>
-                            <input type='password' placeholder='enter you password'/>
-                            <div className="icon_container right">
-                                <InvisibleSvg/>
+                            <input id='password' value={password} type={InputType}  onChange={(e) => setPassword(e.target.value)} placeholder='enter you password'/>
+                            <div className="auth-icon_container right" onClick={handleClickShowPassword} >
+                                {Icon}
                             </div>
                         </div>
                     </div>

@@ -35,5 +35,6 @@
     .block-list-li {
         grid-row: 1;
         width: 225px;
+        height: 100%;
     }
 }

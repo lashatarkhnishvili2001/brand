@@ -93,9 +93,28 @@
 }    
 .cart-row .cart-main-col .cart-item-container .cart-quantity-price .cart-quantity .quantity-num{
     padding: 0 35px;
-
 }
 
+.cart-main-col .cart-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.cart-main-col .cart-button .ButtonLargeWhiteIcon{
+    background-color: #0D6EFD;
+    border-radius: 8px;
+}
+.cart-main-col .cart-button .ButtonLargeWhiteIcon .heading-5{
+    color: #fff;
+}
+.cart-main-col .cart-button .ButtonLargeWhite{
+    height: 40px;
+}
+.cart-main-col .cart-button .ButtonLargeWhite .heading-5{
+    color: #0D6EFD;
+}
 /* price */
 .cart-row .cart-pay-col {
     width: 280px;

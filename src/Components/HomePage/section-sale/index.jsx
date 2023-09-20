@@ -6,10 +6,10 @@ import './index.css';
 import React from 'react';
 
 const SelectionSale = () => {
-    const [timerDays, setTimesDays] = useState();
-    const [timerHours, setTimesHours] = useState();
-    const [timerMinutes, setTimesMinutes] = useState();
-    const [timerSeconds, setTimesSeconds] = useState();
+    const [timerDays, setTimesDays] = useState('');
+    const [timerHours, setTimesHours] = useState('');
+    const [timerMinutes, setTimesMinutes] = useState('');
+    const [timerSeconds, setTimesSeconds] = useState('');
 
     let interval = useRef() ;
 

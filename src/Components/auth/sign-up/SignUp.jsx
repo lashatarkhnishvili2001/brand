@@ -1,16 +1,17 @@
 import React from 'react'
-import { EmailSvgSvg, InvisibleSvg, PasswordSvg, UserSvg } from '../../../static/icons'
+import { EmailSvgSvg, PasswordSvg, UserSvg } from '../../../static/icons'
 import { ButtonLargeBlue } from '../../Buttons'
 import './signUp.css';
 
-const SignUp = ({setAction}) => {
+const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
     return (
         <div className="user-container">
-            <h1 className='sign-name'>sign up</h1>
+            <h1 className='sign-name'>Sign up</h1>
             <p className='sign-p'> If you don’t have an account register <br/> You can  <span className='auth-click' onClick={() => { setAction(false)}}> Login here !</span></p>
                 <form> 
                     <div className="form-group">
-                        <label className='label-name'>Email</label>
+                        
+                        <label htmlFor="email" className='label-name'>Email</label>
                         <div className="input-container">
                             <div className="icon-container left">
                                 <EmailSvgSvg />
@@ -19,7 +20,7 @@ const SignUp = ({setAction}) => {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className='label-name'>User</label>
+                        <label htmlFor="user" className='label-name'>User</label>
                         <div className="input-container">
                             <div className="icon-container left">
                                 <UserSvg />
@@ -28,26 +29,26 @@ const SignUp = ({setAction}) => {
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className='label-name'>Password</label>
+                        <label htmlFor="password" className='label-name'>Password</label>
                         <div className="input-container">
                             <div className="icon-container left">
                                 <PasswordSvg />
                             </div>
-                            <input type='password' placeholder='enter you password'/>
-                            <div className="icon_container right">
-                                <InvisibleSvg/>
+                            <input type={InputType} placeholder='enter you password'/>
+                            <div className="auth-icon_container right" onClick={handleClickShowPassword}>
+                                {Icon}
                             </div>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label className='label-name'>Password</label>
+                        <label htmlFor="password" className='label-name'>Password</label>
                         <div className="input-container">
                             <div className="icon-container left">
                                 <PasswordSvg />
                             </div>
-                            <input type='password' placeholder='Confrim your Password'/>
-                            <div className="icon_container right">
-                                <InvisibleSvg/>
+                            <input type={InputType} placeholder='Confrim your Password'/>
+                            <div className="auth-icon_container right" onClick={handleClickShowPassword} >
+                                {Icon} 
                             </div>
                         </div>
                     </div>

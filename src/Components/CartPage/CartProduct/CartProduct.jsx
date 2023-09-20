@@ -1,9 +1,9 @@
 import React from 'react'
-import { Heading, Heading4, Heading6, Subheading } from '../../Headings'
+import { Heading, Heading4, Heading5, Heading6, Subheading } from '../../Headings'
 import shirt from  '../../../Assets/images/CartBitmap.png'
-import { ButtonLargeBlue, ButtonSmallWhite } from '../../Buttons'
+import { ButtonLargeBlue, ButtonLargeWhite, ButtonLargeWhiteIcon, ButtonSmallWhite } from '../../Buttons'
 import './CartProduct.css'
-import { AddSvg, LogoPPaySvg, LogoPaySvg, PaymentPaySvg, RemoveSvg, VisaPaySvg } from '../../../static/icons'
+import { AddSvg, BackCartSvg, LogoPPaySvg, LogoPaySvg, PaymentPaySvg, RemoveSvg, VisaPaySvg } from '../../../static/icons'
 
 const CartProduct = () => {
     return (
@@ -94,6 +94,10 @@ const CartProduct = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="cart-button">
+                        <ButtonLargeWhiteIcon text={<Heading5 text={'Back to shop'}/>} icon={<BackCartSvg/>}/>
+                        <ButtonLargeWhite text={<Heading5 text={'Remove all'}/>} />
                     </div>
                 </div>
                 <div className="cart-pay-col"> 

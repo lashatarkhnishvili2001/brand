@@ -25,9 +25,9 @@
 }
 .service-list-li .icon-radius .icon {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    
+    align-items: center;
+    height: 100%;
 }
 
 .service-list-li .description{
