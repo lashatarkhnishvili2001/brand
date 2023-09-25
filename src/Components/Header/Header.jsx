@@ -5,12 +5,12 @@ import Menu from "../mobile/burgermenu";
 import SearchSmall from "../mobile/searchSmall/SearchSmall";
 
 import './style.css'
-const Header = () => {
+const Header = ({setShow}) => {
     return (
         <>
         <header>
             <div className="header-container">
-                <Menu/>
+                <Menu setShow={setShow}/>
                 <Logo/>
                 <Search/>
                 <Navbar/>

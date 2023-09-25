@@ -6,7 +6,7 @@ import NotFound from '../Page/Details/NotFound'
 const DetailsRouter = () => {
     return (
         <Routes>
-            <Route path=":detailsID" element={<Details/>} />
+            <Route path="/:detailsID" element={<Details/>} />
             <Route path="*" element={<NotFound/>} />
         </Routes>
     )

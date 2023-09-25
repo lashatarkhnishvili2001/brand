@@ -6,6 +6,9 @@ import './CartProduct.css'
 import { AddSvg, BackCartSvg, LogoPPaySvg, LogoPaySvg, PaymentPaySvg, RemoveSvg, VisaPaySvg } from '../../../static/icons'
 
 const CartProduct = () => {
+
+
+
     return (
         <section className='section-main'>
             <Heading text={`My cart ${'(3)'}`}/>

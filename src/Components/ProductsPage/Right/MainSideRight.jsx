@@ -3,15 +3,25 @@ import './MainSideRight.css'
 import { Heading6, Subheading1 } from '../../Headings';
 import ProductsCol from './produstsColumn';
 import ProductsRow from './productsRow';
-const MainSideRight = ({view, setView} ) => {
-    
-    
+// import { useEffect, useState } from 'react';
+
+const MainSideRight = ({view, setView, products, params } ) => {
+    // const [products, setProducts] = useState([])
+
+    // useEffect( () => {
+    //     fetch("https://digitalamazonproject.azurewebsites.net/api/product/products")
+    //     .then ((response) => response.json())
+    //     .then((data)=> {
+    //         setProducts(data)
+    //     })
+    // }, [])
+
     return (
             <div className="Products-list-container">
                 <div className="view-products">
                     <div className="products-found-quantity">
-                        <Subheading1 text={`12,911 items in`}/>
-                        <Heading6 text={'Mobile accessory'}/>
+                        <Subheading1 text={`${products.length} items in`}/>
+                        <Heading6 text={params.category ?` ${params.category}`: `Store`}/>
                     </div>
 
                     <div className="products-list-right">
@@ -39,9 +49,11 @@ const MainSideRight = ({view, setView} ) => {
                 </div>
 
                 {view ? (
-                    <ProductsRow/>
+                    <ProductsRow products={products}/>
+                    // <ProductsRow />
                 ) : ( 
-                    <ProductsCol/> 
+                    <ProductsCol products={products} /> 
+                    // <ProductsCol  /> 
                 )}
 
             </div>

@@ -13,38 +13,38 @@ const FilterItemFeatures = () => {
             </div>
             <div className="filters-body">
                 <form>
-                    <ul className='category-list-ul'>
-                        <li className="category-list-li">
-                            <div className="category-list-item-container">
+                    <ul className='list-ul'>
+                        <li className="list-li">
+                            <div className="list-item-container">
                                 <input type='checkbox' id='samsung'/>
-                                <label for="samsung">Metallic</label>
+                                <label htmlFor="samsung">Metallic</label>
                             </div>
                         </li>
-                        <li className="category-list-li">
-                            <div className="category-list-item-container">
+                        <li className="list-li">
+                            <div className="list-item-container">
                                 <input type='checkbox' id='Huawei'/>
-                                <label for="Huawei">Plastic cove</label>
+                                <label htmlFor="Huawei">Plastic cove</label>
                             </div>
                         </li>
-                        <li className="category-list-li">
-                            <div className="category-list-item-container">
+                        <li className="list-li">
+                            <div className="list-item-container">
                                 <input type='checkbox' id='apple'/>
-                                <label for="apple">8GB Ram</label>
+                                <label htmlFor="apple">8GB Ram</label>
                             </div>
                         </li>
-                        <li className="category-list-li">
-                            <div className="category-list-item-container">
+                        <li className="list-li">
+                            <div className="list-item-container">
                                 <input type='checkbox' id='lenovo'/>
-                                <label for="lenovo">Super power</label>
+                                <label htmlFor="lenovo">Super power</label>
                             </div>
                         </li>
-                        <li className="category-list-li">
-                            <div className="category-list-item-container">
+                        <li className="list-li">
+                            <div className="list-item-container">
                                 <input type='checkbox' id='lenovo'/>
-                                <label for="lenovo">Large Memory</label>
+                                <label htmlFor="lenovo">Large Memory</label>
                             </div>
                         </li>
-                        <li className="category-list-li">
+                        <li className="list-li">
                             <div className="see-all">
                                 <Subheading1 text={'see-all'} />
                             </div>

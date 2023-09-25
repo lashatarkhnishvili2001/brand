@@ -23,6 +23,7 @@ export {ReactComponent as Language} from '../Assets/Icon/language.svg';
 
 // 
 export {ReactComponent as FavoriteSvg} from '../Assets/Icon/favorite_border.svg';
+export {ReactComponent as ArrowForwardSvg} from '../Assets/Icon/arrow_forward.svg';
 
 
 // details 
@@ -63,4 +64,11 @@ export {ReactComponent as  FacebookSvg } from '../Assets/Icon/Facebook.svg';
 export {ReactComponent as  AppleSvg } from '../Assets/Icon/apple.svg';
 export {ReactComponent as  GoogleSvg } from '../Assets/Icon/google.svg';
 
-
+// sidebar
+export {ReactComponent as  HomeSvg } from '../Assets/Icon/sidebar/home.svg';
+export {ReactComponent as  ListSvg } from '../Assets/Icon/sidebar/list.svg';
+export {ReactComponent as  FavoriteSSvg } from '../Assets/Icon/sidebar/favorite_border.svg';
+export {ReactComponent as  InventorySSvg } from '../Assets/Icon/sidebar/inventory_2.svg';
+export {ReactComponent as  LanguageSvg } from '../Assets/Icon/sidebar/language.svg';
+export {ReactComponent as  HeadsetMicSvg } from '../Assets/Icon/sidebar/headset_mic.svg';
+export {ReactComponent as  BusinessSvg } from '../Assets/Icon/sidebar/business.svg';

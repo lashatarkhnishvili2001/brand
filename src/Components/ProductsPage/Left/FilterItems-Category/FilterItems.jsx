@@ -1,9 +1,33 @@
-import React, { useState } from 'react'
-import { Heading6, Subheading1 } from '../../../Headings';
+import React, { useEffect, useState } from 'react'
+import { Heading6, } from '../../../Headings';
 import { ExpandMoreSvg } from '../../../../static/icons';
-
+import { category } from '../../../../script/categoryData';
+import { useSearchParams } from 'react-router-dom';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getCategories } from '../../../../store/category/category';
 const FilterItems = () => {
     const [toggle, setToggle] = useState(false);
+
+    const [searchParams, setSearchParams] = useSearchParams()
+
+    const params = Object.fromEntries([...searchParams]);
+    
+    const handleCurrentCategory = ( id , category) => {
+        setSearchParams({
+            ...params,
+            currentCategory: id,
+            category,
+        })
+    }
+    
+    // const {categories, loading, error} = useSelector((state) => state.categories)
+    // const dispatch = useDispatch()
+
+
+    // useEffect(() => {
+    //     dispatch(getCategories());
+    // },[dispatch]);
+
 
     return (
         <div className={`filters ${toggle? 'active' : ''}`} >
@@ -13,21 +37,11 @@ const FilterItems = () => {
                         </div>
                         <div className="filters-body">
                             <ul className='category-list-ul'>
-                                <li className='category-list-li'>
-                                    <Subheading1 text={'mobile accessory'} />
-                                </li>
-                                <li className='category-list-li'>
-                                    <Subheading1 text={'electronics'} />
-                                </li>
-                                <li className='category-list-li'>
-                                    <Subheading1 text={'Smartphone'} />
-                                </li>
-                                <li className='category-list-li'>
-                                    <Subheading1 text={'modern teach'} />
-                                </li>
-                                <li className='see-all'>
-                                    <Subheading1 text={'see-all'} />
-                                </li>
+                                {category.map((value, index) =>  {
+                                    return (
+                                        <li className='category-list-li' key={index} onClick={() => handleCurrentCategory(value.id, value.name)}>{value.name}</li>   
+                                )
+                                })}
                             </ul>
                         </div>
                     </div>

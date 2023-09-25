@@ -9,7 +9,7 @@ const Email = () => {
             <Heading4 text={'Subscribe on our newsletter'}/>
             <Subheading text={'Get daily news on upcoming offers from many suppliers all over the world'} />
             <form >
-                {/* <label for="email" ></label> */}
+                {/* <label htmlFor="email" ></label> */}
                 <div className="emailSvg">
                     <EmailSvg />
                 </div>

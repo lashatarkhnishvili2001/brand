@@ -1,9 +1,9 @@
 import MenuImg from '../../../Assets/images/menu.png';
 import './menu.css';
 
-const Menu = () => {
+const Menu = ({setShow}) => {
     return (
-        <div className="menu">
+        <div className="menu" onClick={() => setShow(true)}>
             <img src={MenuImg} alt="menu" />
         </div>
     )   

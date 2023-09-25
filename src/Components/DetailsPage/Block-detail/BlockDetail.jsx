@@ -1,59 +1,58 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import Navigation from './navigation';
-import { detailsArray } from '../../../static/details';
-import { Heading3, Subheading, Subheading1 } from '../../Headings';
+// import React, { useEffect, useState } from 'react';
+// import { useParams, useNavigate } from 'react-router-dom';
+// import Navigation from './navigation';
+// import { detailsArray } from '../../../static/details';
+// import { Heading3, Subheading, Subheading1 } from '../../Headings';
+// import { CheckSvg } from '../../../static/icons';
 import './BlockDetail.css'
-import { CheckSvg } from '../../../static/icons';
-const BlockDetail = () => {
-    const navigate = useNavigate();
-    const {detailsID} = useParams();
-    const [chosenDetails, setChosenDetails] = useState({
-        found: true,
-        data: {}
-    });
 
-    console.log(chosenDetails.data)
+const BlockDetail = (props) => {
 
+    // const {product} = props;
+    // const { name, description} = product
 
-    useEffect(() =>{
-        const currentElement = detailsArray.find((item) => item.id === detailsID.toLocaleLowerCase()); 
-        if(currentElement) {
-            setChosenDetails({
-                found:true,
-                data: {...currentElement}
-            });
-        }else{
-            setChosenDetails({
-                found:false,
-                data: {}
-            })
-        }
-    }, [detailsID])
+    // const navigate = useNavigate();
+    // const {detailsID} = useParams();
+    // const [chosenDetails, setChosenDetails] = useState({
+    //     found: true,
+    //     data: {}
+    // });
 
 
-    useEffect(() => {
-        if (!chosenDetails.found) {
-            setTimeout(() => {
-                navigate('/')
-            }, 1000)
-        }
-    }, [chosenDetails, navigate] )
+
+    // useEffect(() =>{
+    //     const currentElement = detailsArray.find((item) => item.id === detailsID.toLocaleLowerCase()); 
+    //     if(currentElement) {
+    //         setChosenDetails({
+    //             found:true,
+    //             data: {...currentElement}
+    //         });
+    //     }else{
+    //         setChosenDetails({
+    //             found:false,
+    //             data: {}
+    //         })
+    //     }
+    // }, [detailsID])
 
 
-    // const [isOpen, setIsOpen] = useState(false);    
+    // useEffect(() => {
+    //     if (!chosenDetails.found) {
+    //         setTimeout(() => {
+    //             navigate('/')
+    //         }, 1000)
+    //     }
+    // }, [chosenDetails, navigate] )
+
+
 
     return (
         <div className="Block-detail">
-            {chosenDetails.found ? (
-                <div className="content-container">
+            {/* {chosenDetails.found ? (
+                <div className="content-container" >
                     <Navigation detailInformation={detailsArray} />
                     <div className="detail-description">
-                        {/* <span className={`grd m-readMore ${isOpen ? 'more' : '' } `}> */}
-                            <Subheading text={chosenDetails.data.description} />
-                        {/* </span> */}
-                        {/* <button onClick={() => setIsOpen(prev => !prev)}>{isOpen ? 'read less' : 'read more...'}  </button> */}
-
+                            <Subheading text={description} />
                     </div>
                     <div className="detail-two-box">
                         <div className="detail-item-left">
@@ -67,6 +66,7 @@ const BlockDetail = () => {
                                 <li>
                                     <div className="detail-item-left">
                                         <Subheading1 text={chosenDetails.data?.name.model}/>
+                                        
                                     </div>
                                 </li>
                             </ul>
@@ -87,7 +87,7 @@ const BlockDetail = () => {
             ): (
                 <div>details not found</div>
             )}
-            
+             */}
         </div>
     )
 }

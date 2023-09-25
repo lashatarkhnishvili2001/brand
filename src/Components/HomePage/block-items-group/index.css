@@ -46,10 +46,29 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-
- 
 }
 
+.block-item-container .title{
+    padding: 14px 16px;
+    display: none;
+}
+
+.block-item-container .link-source {
+    display: none;
+}
+
+.block-item-container .link-source .ButtonLargeWhiteIcon{
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+.block-item-container .link-source .ButtonLargeWhiteIcon span{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: #0D6EFD;
+
+}
 
 @media (max-width: 1200px) {
     .block-item-container {
@@ -66,7 +85,24 @@
         display: grid;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
-        height: 127px;
+        height: 170px;
 
     }
+    .block-item-container .homeimage{
+        display: none;
+    }
+    .block-item-container .title{
+        display: block;
+    }
+    
+    .block-item-container .homeimage .home{
+        position: block;
+    }
+    .block-item-container .link-source {
+        display: block;
+    }
+    .block-item-container .link-source > .ButtonLargeWhiteIcon {
+        display: block;
+    }
+    
 }

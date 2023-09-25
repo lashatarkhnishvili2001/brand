@@ -7,7 +7,7 @@ footer {
     width: 100%;
     display: flex;
     gap: 50px;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
 }
 
@@ -125,7 +125,6 @@ footer {
         display: block;
     }
     .box-container{
-        width: calc(95% / 2);
-        /* width: 100%; */
+        width: 100%;
     }
 }

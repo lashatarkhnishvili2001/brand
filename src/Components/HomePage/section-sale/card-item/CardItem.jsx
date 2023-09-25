@@ -2,9 +2,20 @@ import './cardItem.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { data } from '../../../../static/products';
+// import { data } from '../../../../static/products';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getOfferedProducts } from '../../../../store/offersProducts/offersProducts';
+import { Link } from 'react-router-dom';
+
 const CardItem = () => {
     
+    const dispatch = useDispatch()
+
+    const {offeredProducts} = useSelector((state) => state.offeredProducts)
+    useEffect(() => {
+        dispatch(getOfferedProducts())
+    }, [dispatch])
 
     const settings = {
         // dots: false,
@@ -67,13 +78,16 @@ const CardItem = () => {
 
     return (
         <div className="flex-item">
+            
             <Slider {...settings}>
-                {data.map((value, index ) =>  {
+                {offeredProducts.map((value, index ) =>  {
                     return index < 5 && (
                         <div className="Api" key={index}>
-                            <img src={value.img} alt="" />
-                            <span className='apiName'>{value.ApiName}</span>
-                            <div className='price'><span>{value.price}</span></div>
+                            <Link to={`/details/${value.id}`}>
+                                <img src={value.image} alt="" />
+                            </Link>
+                            <span className='apiName'>{value.name}</span>
+                            <div className='price'><span>{`-${Math.floor((value.newPrice / value.oldPrice) * 100)}%`}</span></div>
                         </div>
                     )
 

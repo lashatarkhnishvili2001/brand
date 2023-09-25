@@ -14,7 +14,7 @@ const SelectionSale = () => {
     let interval = useRef() ;
 
     const stateTimer = () => {
-        const countdownDate = new Date(2023, 8, 16, 23, 59, 59).getTime();
+        const countdownDate = new Date(2023, 9, 16, 23, 59, 59).getTime();
 
         interval = setInterval(() => {
             const now = new Date().getTime();

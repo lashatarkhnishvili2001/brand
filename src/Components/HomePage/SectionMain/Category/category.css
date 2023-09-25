@@ -16,6 +16,10 @@
 .category .box{
     width: 230px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #505050;
 }
 
 .category .box span {
@@ -34,9 +38,11 @@
     text-transform: capitalize;
 }   
 
-.category .box span:active{
+.category .box:hover{
     background-color:#E5F1FF;
+    color: #000;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 @media (max-width: 1200px) {

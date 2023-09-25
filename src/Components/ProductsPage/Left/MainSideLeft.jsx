@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Heading6, Subheading1 } from '../../Headings'
-import { ExpandLessSvg, ExpandMoreSvg } from '../../../static/icons'
+// import React, { useState } from 'react'
+// import { Heading6, Subheading1 } from '../../Headings'
+// import { ExpandLessSvg, ExpandMoreSvg } from '../../../static/icons'
 import './MainSideLeft.css'
 import FilterItems from './FilterItems-Category'
 import FilterItemBrand from './FilterItem-brand'
@@ -16,7 +16,7 @@ const MainSideLeft = () => {
                     <FilterItems/>
                 </div>
                 <div className="filters-list-li">
-                    <FilterItemBrand/>
+                    <FilterItemBrand />
                 </div>
                 <div className="filters-list-li">
                     <FilterItemFeatures/>

@@ -29,8 +29,9 @@ export const detailsArray = [
         ,
         feature: [
             'Some great feature name here',
-            'Some great feature name here',
-            'Some great feature name here'
+            'Lorem ipsum dolor sit amet, consectetur ',
+            'Duis aute irure dolor in reprehenderit',
+            "Some great feature name here"
         ],
     },
     {
