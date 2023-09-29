@@ -9,6 +9,8 @@ import { EyeSlashSvg, EyeSolidSvg } from '../../static/icons'
 const Auth = () => {
 
     
+    
+    
 
     const [action, setAction] = useState(false)
 
@@ -17,8 +19,10 @@ const Auth = () => {
     const handleClickShowPassword = () => {
         setVisible(!visible);
     };
+    const InputType = visible ? 'text' : 'password' ;
 
-    const InputType = visible ? 'text' : 'password'
+
+
 
     return (
         <main className='auth-main'>

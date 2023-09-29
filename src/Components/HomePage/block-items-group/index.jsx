@@ -11,20 +11,20 @@ const BlockItemsGroup = ({data, dataMain}) => {
         <div className='block-item-container'>
             {dataMain.map((item) => {
                 return(
-                    <>
-                    <div className="homeimage" key={item.id}>
-                        <img src={item.image} alt="" />  
-                        <div className="home">
-                            <h1>{item.title}</h1>
-                            <Link to={'/products'}>
-                                <ButtonNormalWhite text={"Source now"}/>
-                            </Link>
+                    <div className='id' key={item.id}>
+                        <div className="homeimage" >
+                            <img src={item.image} alt="" />  
+                            <div className="home">
+                                <h1>{item.title}</h1>
+                                <Link to={'/products'}>
+                                    <ButtonNormalWhite text={"Source now"}/>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="title">
+                            <Heading7 text={item.name}/>
                         </div>
                     </div>
-                <div className="title">
-                    <Heading7 text={item.name}/>
-                </div>
-                    </>
                 )
             })}
             <div className="block-list-container">

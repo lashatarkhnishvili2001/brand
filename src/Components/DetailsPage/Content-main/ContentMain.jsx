@@ -13,6 +13,10 @@ const ContentMain = (props) => {
     // const [item] = useState(data);
     const [value, setValue] = useState(0);
 
+    
+
+
+
     return (
         <section>
             <div className="content-main" key={id}>

@@ -114,6 +114,32 @@
     color: #000;
 }
 
+.hide {
+    display: none;
+}
+
+.valid {
+    color: green;
+    
+}
+
+.invalid {
+    color: red;
+}
+
+.instruction {
+    padding: 5px;
+    color: red;
+    border-radius: 5px;
+}
+
+.offscreen{
+    display: none;
+}
+.userSvg{
+    color: blue;
+}
+
 @media (max-width: 1100px) {
     .user-container{
         width: 100%;

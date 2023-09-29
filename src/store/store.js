@@ -5,6 +5,8 @@ import LatestProducts from "./lateslProducts/lateslProducts.jsx";
 import MostDemandProducts from "./mostDemandProducts/mostDemandProducts.jsx";
 import products from "./products/products.jsx";
 import details from "./details/details.jsx";
+// import authReducer from './authSlices/auth.js';
+// import MessageReducer from './authSlices/message.js';
 
 const store = configureStore({
     reducer: {
@@ -13,8 +15,9 @@ const store = configureStore({
         latestProducts: LatestProducts,
         mostDemandProducts: MostDemandProducts,
         products: products,
-        details: details
-        
+        details: details,
+        // auth:authReducer,
+        // message: MessageReducer,
     }
 })
 

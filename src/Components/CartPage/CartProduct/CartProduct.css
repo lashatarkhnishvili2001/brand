@@ -176,6 +176,15 @@
     align-items: center;
 }
 
+.cart-loader-container{
+    width: 70%;
+}
+
+.noCartItems{
+    width: 70%;
+    text-align: center;
+}
+
 @media (max-width: 850px) {
     .cart-row {
         flex-wrap: wrap;
