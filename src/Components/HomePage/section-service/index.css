@@ -13,3 +13,9 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
+@media (max-width: 767px) {
+    .service-container {
+        padding: 0 10px;
+    }
+}

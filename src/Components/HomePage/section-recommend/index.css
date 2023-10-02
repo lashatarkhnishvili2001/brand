@@ -18,10 +18,14 @@
 
 
 @media (max-width: 500px) {
+    .recommend-section{
+        margin: 24px 10px;
+    }
     .recommend-list-container .recommendItems-ul {
         display: grid;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
     }
+    
 }
 

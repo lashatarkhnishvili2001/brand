@@ -7,7 +7,6 @@ import FilterView from './filter-view'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../../../store/products/products'
 import { useSearchParams } from 'react-router-dom'
-import Loader from '../../Loader/Loader'
 
 const ProductsMain = () => {
     const [view , setView] = useState(false)

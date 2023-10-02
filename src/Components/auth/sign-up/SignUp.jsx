@@ -48,7 +48,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
 
     useEffect(() => {
         setValidPassword(PWD_REGEX.test(password))
-        setValidMathPwd(password === mathPwd)
+        setValidMathPwd(password === mathPwd && PWD_REGEX.test(mathPwd))
     }, [password, mathPwd])
 
 
@@ -71,7 +71,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
         // setSuccess(true);
 
         try {
-            const response = await axios.post('https://digitalamazonproject.azurewebsites.net/api/user/registerUser',
+            const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser',
                 {email: email, userName: user, password: password},
                 {
                     headers:{'content-type': 'application/json' },

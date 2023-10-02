@@ -1,22 +1,22 @@
-// import React, { useEffect, useState } from 'react';
-// import { useParams, useNavigate } from 'react-router-dom';
-// import Navigation from './navigation';
-// import { detailsArray } from '../../../static/details';
-// import { Heading3, Subheading, Subheading1 } from '../../Headings';
-// import { CheckSvg } from '../../../static/icons';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Navigation from './navigation';
+import { detailsArray } from '../../../static/details';
+import { Heading3, Subheading, Subheading1 } from '../../Headings';
+import { CheckSvg } from '../../../static/icons';
 import './BlockDetail.css'
 
 const BlockDetail = (props) => {
 
-    // const {product} = props;
-    // const { name, description} = product
+    const {product} = props;
+    const { name, description} = product
 
-    // const navigate = useNavigate();
-    // const {detailsID} = useParams();
-    // const [chosenDetails, setChosenDetails] = useState({
-    //     found: true,
-    //     data: {}
-    // });
+    const navigate = useNavigate();
+    const {detailsID} = useParams();
+    const [chosenDetails, setChosenDetails] = useState({
+        found: true,
+        data: {}
+    });
 
 
 
@@ -48,7 +48,7 @@ const BlockDetail = (props) => {
 
     return (
         <div className="Block-detail">
-            {/* {chosenDetails.found ? (
+            {chosenDetails.found ? (
                 <div className="content-container" >
                     <Navigation detailInformation={detailsArray} />
                     <div className="detail-description">
@@ -87,7 +87,7 @@ const BlockDetail = (props) => {
             ): (
                 <div>details not found</div>
             )}
-             */}
+            
         </div>
     )
 }

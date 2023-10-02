@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const Url = '/user/'
+const Url = 'https://amazon-digital-prod.azurewebsites.net/api/user/'
+
+
 
 const register = (email, user, password) => {
     return axios.post(Url + '/registerUser',

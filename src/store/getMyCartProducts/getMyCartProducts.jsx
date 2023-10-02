@@ -14,13 +14,17 @@ export const getMyCartProducts = createAsyncThunk('cart/getCartProducts', async 
     }
 });
 
+
+const initialState = {
+    cartProducts: [],
+    loading: false,
+    error: null
+}
+
 const cartProductsSlice = createSlice({
     name: 'cartProducts',
-    initialState: {
-        cartProducts: [],
-        loading: false,
-        error: null
-    },
+    initialState,
+    reducers: {  },
     extraReducers: {
         [getMyCartProducts.pending]: (state) => {
             state.loading = true;

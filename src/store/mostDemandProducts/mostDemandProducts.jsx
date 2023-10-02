@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getMostDemandProducts = createAsyncThunk('products/getMostDemandProducts', async () => {
     try {
-        const response = await axios.get('https://digitalamazonproject.azurewebsites.net/api/product/mostdemandproducts');
+        const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/product/mostdemandproducts');
         const data = response.data
         return  data
     }catch (error) {
@@ -11,13 +11,16 @@ export const getMostDemandProducts = createAsyncThunk('products/getMostDemandPro
     }
 });
 
+const initialState = {
+    mostDemandProducts: [],
+    loading: false,
+    error: null,
+}
+
 const mostDemandProductsSlice = createSlice({
     name: 'mostDemandProducts',
-    initialState: {
-        mostDemandProducts: [],
-        loading: false,
-        error: null,
-    },
+    initialState,
+    reducers: {  },
     extraReducers: {
         [getMostDemandProducts.pending]: (state) => {
             state.loading = true;

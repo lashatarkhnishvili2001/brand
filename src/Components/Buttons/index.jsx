@@ -4,8 +4,8 @@ export const ButtonSmallBlue = ({ text }) => {
     return <button className="ButtonSmallBlue button"> <span>{text}</span></button>;
 };
 
-export const ButtonNormalBlue = ({ text }) => {
-    return <button className="ButtonNormalBlue button"> <span>{text}</span></button>;
+export const ButtonNormalBlue = ({ text, onClick }) => {
+    return <button className="ButtonNormalBlue button" onClick={onClick}> <span>{text}</span></button>;
 };
 
 export const ButtonLargeBlue = ({ text, type }) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Heading6, Subheading1 } from '../../../Headings'
 import { ExpandMoreSvg } from '../../../../static/icons'
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 
 const FilterItemBrand = ({brands}) => {
     const [toggle, setToggle] = useState(false);

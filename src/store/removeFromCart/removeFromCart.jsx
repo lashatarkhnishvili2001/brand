@@ -22,14 +22,17 @@ export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id
     }
 })
 
+const initialState = {
+    remove:false,
+    loading:false,
+    error: null,
+}
+
 
 const removeFromCartSlice = createSlice({
     name: 'removeFromCart',
-    initialState: {
-        remove:false,
-        loading:false,
-        error: null,
-    },
+    initialState,
+    reducers: {  },
     extraReducers: {
         [removeFromCart.pending]: (state) => {
             state.loading = true;

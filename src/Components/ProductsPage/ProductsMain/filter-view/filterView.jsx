@@ -4,7 +4,8 @@ import { FilterSvg, GridViewSvg, ListViewSvg } from '../../../../static/icons'
 import './filterView.css';
 
 const filterView = ({view, setView, setFilterShow }) => {
-  console.log(setFilterShow)
+
+  
   return (
     <div className="filter-container-view">
       <div className="filter-quantity" onClick={() => (setFilterShow(prev => !prev))}>

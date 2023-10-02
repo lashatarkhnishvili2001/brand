@@ -1,33 +1,39 @@
 import React, { useEffect, useState } from 'react'
-import { Heading6, } from '../../../Headings';
+import { Heading6, Subheading1, } from '../../../Headings';
 import { ExpandMoreSvg } from '../../../../static/icons';
-import { category } from '../../../../script/categoryData';
-import { useSearchParams } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getCategories } from '../../../../store/category/category';
-const FilterItems = () => {
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { concat, slice } from 'lodash';
+import { ButtonNormalBlue } from '../../../Buttons';
+
+const LENGTH = 13;
+const LIMIT =  3;
+
+const FilterItems = ({categories}) => {
     const [toggle, setToggle] = useState(false);
-
-    const [searchParams, setSearchParams] = useSearchParams()
-
-    const params = Object.fromEntries([...searchParams]);
     
-    const handleCurrentCategory = ( id , category) => {
-        setSearchParams({
-            ...params,
-            currentCategory: id,
-            category,
-        })
+    const navigate = useNavigate()
+
+    const handleClick = ( id, category) => {
+        const searchParams = new URLSearchParams();
+        searchParams.set('category', category);
+        searchParams.set('currentCategory', id );
+        // searchParams.set('pageNumber', '1');
+
+        navigate(`/products?${searchParams.toString()}`)
     }
-    
-    // const {categories, loading, error} = useSelector((state) => state.categories)
-    // const dispatch = useDispatch()
 
+    const [showMore, setShowMore] = useState(true);
+    const [list, setList] = useState(slice(categories, 0 , LIMIT));
+    const [index, setIndex] = useState(LIMIT);
 
-    // useEffect(() => {
-    //     dispatch(getCategories());
-    // },[dispatch]);
-
+    const loadMore = () => {
+        const newIndex = index + LIMIT;
+        const newShowMore = newIndex < (LENGTH -1)
+        const newList = concat(list, slice(categories, index, newIndex));
+        setIndex(newIndex);
+        setList(newList);   
+        setShowMore(newShowMore);
+    }
 
     return (
         <div className={`filters ${toggle? 'active' : ''}`} >
@@ -37,14 +43,21 @@ const FilterItems = () => {
                         </div>
                         <div className="filters-body">
                             <ul className='category-list-ul'>
-                                {category.map((value, index) =>  {
+                                {list.map((value, index) =>  {
                                     return (
-                                        <li className='category-list-li' key={index} onClick={() => handleCurrentCategory(value.id, value.name)}>{value.name}</li>   
-                                )
-                                })}
+                                        <li className='category-list-li' key={index} onClick={() => handleClick(value.id, value.name)}>{value.name}</li>   
+                                        )
+                                    })}
+                                    <li className="list-li">
+                                    <div className="see-all">
+                                        {showMore && <Subheading1 text={'see-all'} onClick={loadMore} /> }
+                                    </div>
+                                </li>
                             </ul>
+                                    
                         </div>
                     </div>
+
     )
 }
 

@@ -1,10 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { category } from '../../../../script/categoryData';
+import { useNavigate } from 'react-router-dom';
 import './category.css'
 import { Heading1 } from '../../../Headings';
-import {useSelector, useDispatch} from 'react-redux'
-import { useEffect } from 'react';
-import { getCategories } from '../../../../store/category/category';
 const Category = ({categories}) => {
 
     const navigate = useNavigate()

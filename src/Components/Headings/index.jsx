@@ -27,8 +27,8 @@ export const Heading7 = ({ text }) => {
 export const Subheading = ({ text , classnames, styles}) => {
     return <p className={`subheading ${classnames}`} style = {styles}>{text}</p>;
 };
-export const Subheading1 = ({ text }) => {
-    return <p className="subheading-1">{text}</p>;
+export const Subheading1 = ({ text, onClick }) => {
+    return <p className="subheading-1" onClick={onClick}>{text}</p>;
 };
 export const Subheading2 = ({ text }) => {
     return <p className="subheading-2">{text}</p>;

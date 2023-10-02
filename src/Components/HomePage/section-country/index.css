@@ -15,5 +15,20 @@
     flex-wrap: wrap;
     gap: 10px 0;
 }
+.country-list-container .country-list-ul.none{
+    display: none;
+}
+.country-list-container .country-list-ul.block{
+    display: flex;
+}
 
+
+@media (max-width:500px) {
+    .country-list-container .country-list-ul.none{
+        display: flex;
+    }
+    .country-list-container .country-list-ul.block{
+        display: none;
+    }
+}
 

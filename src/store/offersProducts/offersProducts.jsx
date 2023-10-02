@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getOfferedProducts = createAsyncThunk('products/getOfferedProducts', async () => {
     try {
-        const response = await axios.get('https://digitalamazonproject.azurewebsites.net/api/product/offers');
+        const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/product/offers');
         const data = response.data
         return data
     }catch (error) {
@@ -11,14 +11,16 @@ export const getOfferedProducts = createAsyncThunk('products/getOfferedProducts'
 }
 });
 
+const initialState = {
+    offeredProducts: [],
+    loading: false,
+    error: null
+}
+
 const offeredProductsSilce = createSlice({
     name: 'offeredProducts',
-    initialState: {
-        offeredProducts: [],
-        loading: false,
-        error: null
-    },
-
+    initialState,
+    reducers: {  },
     extraReducers: {
         [getOfferedProducts.pending]: (state) => {
         state.loading = true

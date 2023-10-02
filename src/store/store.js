@@ -7,7 +7,7 @@ import products from "./products/products.jsx";
 import details from "./details/details.jsx";
 // import authReducer from './authSlices/auth.js';
 // import MessageReducer from './authSlices/message.js';
-
+import brands from "./brands/brands.jsx";
 const store = configureStore({
     reducer: {
         categories: CategoriesReducer,
@@ -18,6 +18,7 @@ const store = configureStore({
         details: details,
         // auth:authReducer,
         // message: MessageReducer,
+        brands: brands,
     }
 })
 

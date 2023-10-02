@@ -59,6 +59,7 @@ const initialState = user ? {isLoggedIn: true, user } : {isLoggedIn: false, user
 const authSlice = createSlice({
     name: 'user',
     initialState,
+    reducers: {  },
     extraReducers: {
         [register.fulfilled]: (state) => {
             state.isLoggedIn = false;
