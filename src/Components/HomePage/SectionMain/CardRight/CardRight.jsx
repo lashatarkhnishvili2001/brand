@@ -1,14 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './cardRight.css'
 import userImg from '../../../../Assets/images/Avatar.png'
 import { ButtonSmallBlue, ButtonSmallWhite } from '../../../Buttons'
 import { Heading6 } from '../../../Headings'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { Modal } from 'antd'
+import { useDispatch } from 'react-redux'
 
-const CardRight = () => {
+const CardRight = ({userToken, setLogOutToggle , logOut}) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  
+
+  const handleOk = () => {
+    logOut()
+    setIsModalOpen(false);
+    navigate('/')
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+
   return (
     <div className="cardRight">
         <div className="user-container">
+          {userToken ? (
+          <>
+          <div className="user">
+            <img src={userImg} alt="" />
+            <span>Hi, user</span>
+          </div>
+              <ButtonSmallWhite text={'Log out'} onClick={showModal}/>
+              <Modal 
+                title="Are you sure you want to log out"
+                open={isModalOpen}
+                onOk={handleOk} 
+                onCancel={handleCancel}>
+                
+              </Modal>
+          </>) : (
+          <>
           <div className="user">
             <img src={userImg} alt="" />
             <span>Hi, user <br/> let's get stated</span>
@@ -19,6 +61,7 @@ const CardRight = () => {
             <Link to={'/authorization'}>
               <ButtonSmallWhite text={'Log in'}/>
             </Link>
+          </>)}
         </div>
         <div className="block-row">
           <div className="block-container one">

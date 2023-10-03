@@ -7,7 +7,7 @@ import './index.css'
 import { useEffect } from 'react'
 import CategorySlider from '../../CategorySlider'
 
-const SectionMain = () => {
+const SectionMain = ({userToken, logOut}) => {
     const {categories, error, loading} = useSelector((state) => state.categories)
 
     const dispatch = useDispatch()
@@ -22,7 +22,7 @@ const SectionMain = () => {
             <div className="sectionMain-container">
                 <Category categories={categories}/>
                 <Banner/>
-                <CardRight/>
+                <CardRight userToken={userToken} logOut={logOut}/>
             </div>
         </section>
     )

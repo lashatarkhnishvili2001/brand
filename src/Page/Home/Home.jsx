@@ -11,13 +11,14 @@ import { latestProductsData, mostDemandProductsDate} from '../../static/blockBox
 import './Home.css'
 import { getLatestProducts } from "../../store/lateslProducts/lateslProducts"
 import { getMostDemandProducts } from "../../store/mostDemandProducts/mostDemandProducts"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const Home = () => {
 
-
     const {latestProducts } = useSelector((state) => state.latestProducts);
     const {mostDemandProducts } = useSelector((state) => state.mostDemandProducts)
+
+    const userToken = JSON.parse(localStorage.getItem('userToken'))
 
     const dispatch = useDispatch()
 
@@ -26,12 +27,14 @@ const Home = () => {
         dispatch(getMostDemandProducts() )
     }, [dispatch])
 
-    
+    const logOut = () => {
+        localStorage.removeItem("userToken")
+    }
 
     return (
         <>
         <div className="main">
-            <SectionMain/>
+            <SectionMain userToken={userToken} logOut={logOut}/>
             <SelectionSale/>
             <BlockItemsGroup data={latestProducts} dataMain={latestProductsData} />
             <BlockItemsGroup data={mostDemandProducts} dataMain={mostDemandProductsDate}/>

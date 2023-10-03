@@ -6,10 +6,8 @@ import { MdMarkEmailRead, MdMarkEmailUnread,  } from "react-icons/md";
 import { TbLockCheck, TbLockX } from "react-icons/tb";
 import './signUp.css';
 import axios from 'axios';
-
-const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{6,24}$/;
+import { EMAIL_REGEX, USER_REGEX, PWD_REGEX } from '../REGEX/REGEX';
+import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
@@ -17,6 +15,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
     const userRef = useRef();
     const errRef = useRef();
 
+    const navigate = useNavigate()
 
     const [email, setEmail] =  useState("");
     const [validEmail, setValidEmail] = useState(false);
@@ -33,6 +32,8 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
     const [mathPwd, setMathPwd] = useState('');
     const [validMathPwd, setValidMathPwd] = useState(false);
     const [focusMathPwd, setFocusMathPwd] = useState(false);
+
+    const [authValidation, setAuthValidation] = useState("");
 
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
@@ -54,7 +55,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
 
     useEffect(() => {
         setErrMsg('');
-    }, [user, password, mathPwd]);
+    }, [email,user, password, mathPwd]);
 
 
     const handleSubmit = async (e) => {
@@ -70,28 +71,33 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
         // console.log(user, email, password)
         // setSuccess(true);
 
+
         try {
-            const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser',
-                {email: email, userName: user, password: password},
-                {
-                    headers:{'content-type': 'application/json' },
-                    
-                }
-            );
-            console.log(response.data)
-            console.log(response.accessToken)
-            console.log(JSON.stringify(response))
-            setSuccess(true);
-        }catch (err) {
-            if (!err?.responser) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 409) {
-                setErrMsg('userName Taken');
-            }else {
-                setErrMsg('Registration failed');
+            setAuthValidation("")
+            const response = await fetch('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({email: email, userName: user, password: password})
+            })
+            const data = await response.json()
+            console.log(data)
+    
+            navigate('/authorization')
+    
+            setEmail("")
+            setUser("")
+            setPassword("")
+            setMathPwd("")
             }
-            errRef.current.focus();
+            catch (error) {
+            console.log(error)
+            setAuthValidation("something went wrong,please try later")
+            setEmail("")
+            setUser("")
+            setPassword("")
+            setMathPwd("")
         }
+
     }
 
 

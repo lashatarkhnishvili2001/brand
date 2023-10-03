@@ -2,32 +2,80 @@ import React, { useEffect, useRef, useState } from 'react'
 import { AppleSvg, EmailSvgSvg, FacebookSvg, GoogleSvg, PasswordSvg } from '../../../static/icons'
 import './signIn.css'
 import { ButtonLargeBlue } from '../../Buttons'
+import { EMAIL_REGEX, PWD_REGEX } from '../REGEX/REGEX'
+import { MdMarkEmailRead, MdMarkEmailUnread } from 'react-icons/md'
+import { TbLockCheck, TbLockX } from 'react-icons/tb'
+import { useNavigate } from 'react-router-dom'
 
 const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     
     const emailRef = useRef();
     const errRef = useRef();
 
+    const navigate = useNavigate()
+    
     const [email, setEmail] = useState('');
+    const [validEmail, setValidEmail] = useState(false);
+    
     const [password, setPassword] = useState('');
-
+    const [validPassword, setValidPassword] = useState(false);
+    
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
     
-    useEffect(() => {
-        emailRef.current.focus();
-    }, [])
+    const [authValidation, setAuthValidation] = useState("")
 
     useEffect(() => {
-        setErrMsg('');
-    }, [email, password])
+        setValidEmail(EMAIL_REGEX.test(email))
+    }, [email])
+    
+    useEffect(() => {
+        setValidPassword(PWD_REGEX.test(password))
+    }, [password])
+
+
+    // useEffect(() => {
+    //     emailRef.current.focus();
+    // }, [])
+
+
+    // useEffect(() => {
+    //     setErrMsg('');
+    // }, [email, password])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email, password);
-        setEmail('');
-        setPassword('');
-        setSuccess(true);
+        
+        try {
+            setAuthValidation("")
+            const response = await fetch('https://amazon-digital-prod.azurewebsites.net/api/User/LogIn', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            })
+            const data = await response.json()
+
+            localStorage.setItem("userToken", JSON.stringify(data.jwt))
+            
+            navigate('/')
+
+            setPassword("")
+            setEmail('')
+            console.log(data)
+            console.log("sussesful")
+        }
+        catch (error) {
+        console.log(error)
+        setAuthValidation("something went wrong,please try later")
+        setPassword("")
+        setEmail('')
+        }
+
+
+
     }
 
     return (
@@ -50,12 +98,16 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
                             <label  htmlFor="email" className='label-name'>Email</label>
                             <div className="input-container">
                                 <div className="icon-container left">
-                                    <EmailSvgSvg />
+                                    {/* <EmailSvgSvg /> */}
+                                    <EmailSvgSvg className={validEmail  || email  ?'hide' : '' }/>
+                                    <MdMarkEmailUnread   className={validEmail || !email ? 'hide' : 'invalid'}/>
+                                    <MdMarkEmailRead className={validEmail ?  'valid' : 'hide'}/>
                                 </div>
                                 <input type='email'  placeholder='enter you email address'
                                     id='email'
                                     ref={emailRef}
                                     autoComplete='off'
+                                    // arial-onInvalid={validEmail ? 'false' : 'true'}
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
@@ -66,11 +118,15 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
                             <label  htmlFor="password" className='label-name'>Password</label>
                             <div className="input-container">
                                 <div className="icon-container left">
-                                    <PasswordSvg />
+                                    {/* <PasswordSvg /> */}
+                                    <PasswordSvg className={validPassword  || password  ?'hide' : '' }/>
+                                    <TbLockX className={validPassword || !password ? 'hide' : 'invalid'}/>
+                                    <TbLockCheck className={validPassword ?  'valid' : 'hide'}/>
                                 </div>
                                 <input id='password' type={InputType}  placeholder='enter you password'
                                     onChange={(e) => setPassword(e.target.value)}
-                                    value={password}
+                                    // value={password}
+                                    // arial-onInvalid={validPassword ? 'false' : 'true'}
                                     required
                                 />
                                 <div className="auth-icon_container right" onClick={handleClickShowPassword} >
