@@ -7,6 +7,7 @@ import NotFound from "../Page/Home/NotFound";
 import Products from "../Page/Products/Products";
 import Auth from "../Page/Auth";
 import Details from "../Page/Details";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Router = () => {
 return (
@@ -16,7 +17,9 @@ return (
             <Route path="/details/:productId" element={<Details />} />
             <Route path="/Products" element={<Products/>} />
             <Route path="/profile" element={<Profile/>} />
-            <Route path="/cart" element={<Cart/>} />
+            <Route element={<PrivateRoutes/>} >
+                <Route path="/cart" element={<Cart/>} />  
+            </Route>
             <Route path="*" element={<NotFound/>} />
         </Routes>
     )

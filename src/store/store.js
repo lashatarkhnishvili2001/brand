@@ -1,13 +1,21 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import CategoriesReducer from './category/category.jsx'
 import OffersProducts from "./offersProducts/offersProducts.jsx";
 import LatestProducts from "./lateslProducts/lateslProducts.jsx";
 import MostDemandProducts from "./mostDemandProducts/mostDemandProducts.jsx";
 import products from "./products/products.jsx";
 import details from "./details/details.jsx";
-// import authReducer from './authSlices/auth.js';
-// import MessageReducer from './authSlices/message.js';
-import brands from "./brands/brands.jsx";
+
+// import getMyCartProducts from "./getMyCartProducts/getMyCartProducts.jsx";
+// import addInCart from "./addInCart/addInCart.jsx";
+// import removeFromCart from "./removeFromCart/removeFromCart.jsx";
+
+import authReducer from '../Slices/auth/auth.jsx';
+import  messageReducer from '../Slices/auth/message.jsx'
+
+import userInfoReducer from './getByEmail/getByEmail.jsx'
+
 const store = configureStore({
     reducer: {
         categories: CategoriesReducer,
@@ -16,9 +24,15 @@ const store = configureStore({
         mostDemandProducts: MostDemandProducts,
         products: products,
         details: details,
-        // auth:authReducer,
-        // message: MessageReducer,
-        brands: brands,
+
+        auth: authReducer,
+        message: messageReducer,
+        userInfo: userInfoReducer,
+
+
+        // cartProducts: getMyCartProducts,
+        // addInCart: addInCart,
+        // removeFromCart: removeFromCart
     }
 })
 

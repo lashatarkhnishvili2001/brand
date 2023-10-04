@@ -6,6 +6,8 @@ import { EMAIL_REGEX, PWD_REGEX } from '../REGEX/REGEX'
 import { MdMarkEmailRead, MdMarkEmailUnread } from 'react-icons/md'
 import { TbLockCheck, TbLockX } from 'react-icons/tb'
 import { useNavigate } from 'react-router-dom'
+import { login } from '../../../Slices/auth/auth'
+import { useDispatch } from 'react-redux'
 
 const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     
@@ -23,7 +25,9 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     const [errMsg, setErrMsg] = useState("");
     const [success, setSuccess] = useState(false);
     
-    const [authValidation, setAuthValidation] = useState("")
+    // const [authValidation, setAuthValidation] = useState("")
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
         setValidEmail(EMAIL_REGEX.test(email))
@@ -46,33 +50,47 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        try {
-            setAuthValidation("")
-            const response = await fetch('https://amazon-digital-prod.azurewebsites.net/api/User/LogIn', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: email,
-                    password: password
-                })
-            })
-            const data = await response.json()
-
-            localStorage.setItem("userToken", JSON.stringify(data.jwt))
-            
+        dispatch(login({ email, password}))
+        .unwrap()
+        .then(() => {
             navigate('/')
+        })
 
-            setPassword("")
-            setEmail('')
-            console.log(data)
-            console.log("sussesful")
-        }
-        catch (error) {
-        console.log(error)
-        setAuthValidation("something went wrong,please try later")
-        setPassword("")
-        setEmail('')
-        }
+        .catch(() => {
+
+        })
+
+        setEmail('');
+        setPassword('');
+
+        
+        // try {
+        //     setAuthValidation("")
+        //     const response = await fetch('https://amazon-digital-prod.azurewebsites.net/api/User/LogIn', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({
+        //             email: email,
+        //             password: password
+        //         })
+        //     })
+        //     const data = await response.json()
+
+        //     localStorage.setItem("userToken", JSON.stringify(data.jwt))
+            
+        //     navigate('/')
+
+        //     setPassword("")
+        //     setEmail('')
+        //     console.log(data)
+        //     console.log("succerful")
+        // }
+        // catch (error) {
+        // console.log(error)
+        // setAuthValidation("something went wrong,please try later")
+        // setPassword("")
+        // setEmail('')
+        // }
 
 
 

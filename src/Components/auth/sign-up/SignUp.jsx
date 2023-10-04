@@ -5,9 +5,12 @@ import { FaCheck, FaInfoCircle, FaTimes, FaUserCheck, FaUserTimes,  } from "reac
 import { MdMarkEmailRead, MdMarkEmailUnread,  } from "react-icons/md";
 import { TbLockCheck, TbLockX } from "react-icons/tb";
 import './signUp.css';
-import axios from 'axios';
+// import axios from 'axios';
 import { EMAIL_REGEX, USER_REGEX, PWD_REGEX } from '../REGEX/REGEX';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { register } from '../../../Slices/auth/auth';
+import { clearMessage } from '../../../Slices/auth/message';
+import { useDispatch } from 'react-redux';
 
 
 const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
@@ -16,6 +19,10 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
     const errRef = useRef();
 
     const navigate = useNavigate()
+
+    const [searchParams, setSearchParams ] = useSearchParams();
+
+    const params = Object.fromEntries([...searchParams])
 
     const [email, setEmail] =  useState("");
     const [validEmail, setValidEmail] = useState(false);
@@ -33,10 +40,24 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
     const [validMathPwd, setValidMathPwd] = useState(false);
     const [focusMathPwd, setFocusMathPwd] = useState(false);
 
-    const [authValidation, setAuthValidation] = useState("");
+    // const [authValidation, setAuthValidation] = useState("");
 
     const [errMsg, setErrMsg] = useState('');
     const [success, setSuccess] = useState(false);
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if(params.account === 'register'){
+            setSuccess(true);
+        }else {
+            setSuccess(false);
+        }
+    }, [params])
+
+    useEffect(() => {
+        dispatch(clearMessage());
+    }, [dispatch])
     
     useEffect(() => {
         setValidEmail(EMAIL_REGEX.test(email))
@@ -68,35 +89,47 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
             setErrMsg('Invalid Enter')
             return
         }
+
+
         // console.log(user, email, password)
         // setSuccess(true);
 
+        dispatch(register({user, email, password}))
+            .unwrap()
 
-        try {
-            setAuthValidation("")
-            const response = await fetch('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({email: email, userName: user, password: password})
-            })
-            const data = await response.json()
-            console.log(data)
-    
-            navigate('/authorization')
-    
+
             setEmail("")
             setUser("")
             setPassword("")
             setMathPwd("")
-            }
-            catch (error) {
-            console.log(error)
-            setAuthValidation("something went wrong,please try later")
-            setEmail("")
-            setUser("")
-            setPassword("")
-            setMathPwd("")
-        }
+
+        // ---------------------------------------------
+        // try {
+        //     setAuthValidation("")
+        //     const response = await fetch('https://amazon-digital-prod.azurewebsites.net/api/user/registerUser', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({email: email, userName: user, password: password})
+        //     })
+        //     const data = await response.json()
+        //     console.log(data)
+    
+        //     navigate('/authorization')
+    
+        //     setEmail("")
+        //     setUser("")
+        //     setPassword("")
+        //     setMathPwd("")
+        //     }
+        //     catch (error) {
+        //     console.log(error)
+        //     setAuthValidation("something went wrong,please try later")
+        //     setEmail("")
+        //     setUser("")
+        //     setPassword("")
+        //     setMathPwd("")
+        // }
+        //-----------------------------------
 
     }
 

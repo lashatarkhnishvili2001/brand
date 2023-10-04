@@ -5,16 +5,12 @@ import { Heading4, Heading6, Heading7, Subheading1, Subheading4 } from '../../He
 // import { data } from '../../../static/details'
 import { CheckSvg, FavoriteSvg, MessageSvg, Shopping_basketSvg, StarSvg } from '../../../static/icons'
 import { ButtonLargeWhiteIcon, ButtonNormalBlue } from '../../Buttons';
-import Slider from "react-slick";
 
 const ContentMain = (props) => {
     const {product} = props;
     const {id, name, images, price} = product
     // const [item] = useState(data);
     const [value, setValue] = useState(0);
-
-    
-
 
 
     return (

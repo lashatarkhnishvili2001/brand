@@ -3,7 +3,7 @@
 
 // export const addInCart = createAsyncThunk('cart/addInCart', async ({ id, token}) => {
 //     try {
-//         const response = await axios.post('https://digitalamazonproject.azurewebsites.net/api/cart/addincart', 
+//         const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/cart/addincart', 
 //         {
 //             productId: id 
 //         },
