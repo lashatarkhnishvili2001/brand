@@ -1,46 +1,47 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-// export const addInCart = createAsyncThunk('cart/addInCart', async ({ id, token}) => {
-//     try {
-//         const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/cart/addincart', 
-//         {
-//             productId: id 
-//         },
-//         {headers: { 
-//             Authorization: `Bearer ${token}`,
-//         }},
-//         );
-//             console.log('added')
-//         }catch (error) {
-//             console.log(error);
-//             return error;
-//         }
-// }); 
+export const addItemToCart = createAsyncThunk('cart/addInCart', async ({ id, token}) => {
+    try {
+        const response = await axios.post('https://amazon-digital-prod.azurewebsites.net/api/cart/addincart', 
+        {
+            productId: id 
+        },
+        {headers: { 
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        }},
+        );
+            console.log(id, token)
+        }catch (error) {
+            console.log(error);
+            return error;
+        }
+}); 
 
-// const initialState = {
-//     loading:false,
-//     error:false,
-// }
-
-
-// const addInCartSlice = createSlice({
-//     name: 'addInCart',
-//     initialState,
-//     reducers: {  },
-//     extraReducers: {
-//         [addInCart.pending]: (state) => {
-//             state.loading = true;
-//         },
-//         [addInCart.fulfilled]: (state) => {
-//             state.loading = false
-//         },
-//         [addInCart.rejected]: (state, action) => {
-//             state.loading = false
-//             state.error = action.payload.error
-//         }
-//     }
-// })
+const initialState = {
+    loading:false,
+    error:false,
+}
 
 
-// export default addInCartSlice.reducer
+const addItemToCartSlice = createSlice({
+    name: 'addItemToCart',
+    initialState,
+    reducers: {  },
+    extraReducers: {
+        [addItemToCart.pending]: (state) => {
+            state.loading = true;
+        },
+        [addItemToCart.fulfilled]: (state) => {
+            state.loading = false
+        },
+        [addItemToCart.rejected]: (state, action) => {
+            state.loading = false
+            state.error = action.payload.error
+        }
+    }
+})
+
+
+export default addItemToCartSlice.reducer

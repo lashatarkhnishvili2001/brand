@@ -4,7 +4,9 @@ import { Heading3, Subheading } from '../../Headings';
 import germany from '../../../Assets/images/DE@2x.png';
 import { Verified_user, Language, FavoriteSvg } from '../../../static/icons';
 import { ButtonLargeWhiteIcon, ButtonNormalBlue, ButtonNormalWhite } from '../../Buttons';
-const SellerInfo = () => {
+const SellerInfo = ({handleAddToCart , id}) => {
+
+
     return (
         <div className='seller-main'>
         <div className="seller-container">
@@ -31,7 +33,7 @@ const SellerInfo = () => {
                     </li>
                 </ul>
             </div>
-            <ButtonNormalBlue text={'Send inquiry'} />
+            <ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'Send inquiry'} />
             <ButtonNormalWhite text={'Seller’s profile'} />
         </div>
         <div className="favorite-container">

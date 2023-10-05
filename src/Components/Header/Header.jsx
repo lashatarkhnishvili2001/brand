@@ -5,7 +5,7 @@ import Menu from "../mobile/burgermenu";
 import SearchSmall from "../mobile/searchSmall/SearchSmall";
 
 import './style.css'
-const Header = ({setShow}) => {
+const Header = ({setShow, cartProducts}) => {
     return (
         <>
         <header>
@@ -13,7 +13,7 @@ const Header = ({setShow}) => {
                 <Menu setShow={setShow}/>
                 <Logo/>
                 <Search/>
-                <Navbar/>
+                <Navbar cartProducts={cartProducts}/>
             </div>
             <div className="searchSmall">
                 <SearchSmall/>

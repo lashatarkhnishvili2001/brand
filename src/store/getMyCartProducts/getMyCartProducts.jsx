@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk  } from "@reduxjs/toolkit";
 
-export const getMyCartProducts = createAsyncThunk('cart/getCartProducts', async (token) => {
+export const getCartProducts = createAsyncThunk('cart/getCartProducts', async (token) => {
     try {
         const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/cart/getmycartproducts',
         {headers: {
@@ -26,15 +26,15 @@ const cartProductsSlice = createSlice({
     initialState,
     reducers: {  },
     extraReducers: {
-        [getMyCartProducts.pending]: (state) => {
+        [getCartProducts.pending]: (state) => {
             state.loading = true;
             state.error = null;
         },
-        [getMyCartProducts.fulfilled]: (state, action) => {
+        [getCartProducts.fulfilled]: (state, action) => {
             state.loading = false;
             state.cartProducts = action.payload;
         },
-        [getMyCartProducts.rejected]: (state, action) => {
+        [getCartProducts.rejected]: (state, action) => {
             state.loading = false;
             state.error = action.error.message
         }

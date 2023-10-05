@@ -1,16 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './contentMain.css'
 import SellerInfo from '../saller-info'
 import { Heading4, Heading6, Heading7, Subheading1, Subheading4 } from '../../Headings'
 // import { data } from '../../../static/details'
 import { CheckSvg, FavoriteSvg, MessageSvg, Shopping_basketSvg, StarSvg } from '../../../static/icons'
 import { ButtonLargeWhiteIcon, ButtonNormalBlue } from '../../Buttons';
+import { useDispatch, useSelector } from 'react-redux'
+
+import { getCartProducts } from '../../../store/getMyCartProducts/getMyCartProducts'
+import { addItemToCart } from '../../../store/addInCart/addInCart'
 
 const ContentMain = (props) => {
     const {product} = props;
     const {id, name, images, price} = product
     // const [item] = useState(data);
     const [value, setValue] = useState(0);
+
+    const [isCartVisible, setCartVisible] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    const userToken = JSON.parse(localStorage.getItem('userToken'));
+
+    const { cartProducts} = useSelector((state) => state.cartProducts);
+    console.log(cartProducts)
+
+    const dispatch = useDispatch();
+
+    const handleAddToCart = async (id) => {
+        if(JSON.stringify(cartProducts).includes(id)) {
+            setCartVisible(true);
+            setSuccess(false);
+        }else {
+            setCartVisible(true);
+            setSuccess(true);
+            dispatch(addItemToCart({id, token: userToken.jwt}))
+        }
+        dispatch(getCartProducts(userToken.jwt))
+    }
+    
 
 
     return (
@@ -141,7 +168,7 @@ const ContentMain = (props) => {
                 
             </div>
             
-            <SellerInfo/>
+            <SellerInfo handleAddToCart={handleAddToCart} id={id}/>
             </div>
 
         </section>
