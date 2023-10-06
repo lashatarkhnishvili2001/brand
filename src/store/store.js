@@ -13,8 +13,9 @@ import removeFromCart from "./removeFromCart/removeFromCart.jsx";
 
 import authReducer from '../Slices/auth/auth.jsx';
 import  messageReducer from '../Slices/auth/message.jsx'
-
 import userInfoReducer from './getByEmail/getByEmail.jsx'
+
+import counterReducer from "../features/counter/counterSlice.js"
 
 const store = configureStore({
     reducer: {
@@ -29,7 +30,8 @@ const store = configureStore({
         userInfo: userInfoReducer,
         cartProducts: CartProductsProducts,
         addItemToCart: AddItemToCart,
-        removeFromCart: removeFromCart
+        removeFromCart: removeFromCart,
+        counter: counterReducer
     }
 })
 

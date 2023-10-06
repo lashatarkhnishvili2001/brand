@@ -13,11 +13,13 @@ import './CartProduct.css';
 import { useEffect, useState } from 'react';
 import Loader from '../../Loader/Loader';
 import { Modal } from 'antd';
+import CounterCart from '../CounterCart';
 
 const CartProduct = () => {
 
     const [open, setOpen] = useState(false);
     const [visible, setVisible] = useState(false);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const navigate = useNavigate();
 
@@ -26,10 +28,25 @@ const CartProduct = () => {
     const dispatch = useDispatch();
 
     const {removed, loading} = useSelector((state) => state.removeFromCart)
-
     const {cartProducts} = useSelector((state) => state.cartProducts)
 
+    let priceSum = 0
 
+    for (const item of cartProducts) {
+        priceSum += parseFloat(item.price);
+    }
+
+    useEffect(() => {
+        setTotalPrice(priceSum)
+    }, [priceSum])
+
+    // const incrementProductQuantity = (id) => {
+    //     const updatedProductsCart = cartProducts.map((product => product.id === id ? { ...product, quantity: product.quantity + 1 } : product))
+    // }
+
+    // const decrementProductQuantity = (id) => {
+    //     const updatedProductsCart = cartProducts.map((product => product.id === id ? (product.quantity === 1 ? product : { ...product, quantity: product.quantity - 1 })  : product))
+    // }
     
 
     useEffect(() => {
@@ -86,18 +103,7 @@ const CartProduct = () => {
                                             </div>
                                         </div>
                                         <div className="cart-quantity-price">
-                                            <span className='cart-price'>$78.99</span>
-                                            <div className="cart-quantity">
-                                                <div className="quantity-remove">
-                                                    <RemoveSvg/>
-                                                </div>
-                                                <div className="quantity-num">
-                                                    3
-                                                </div>
-                                                <div className="quantity-add">
-                                                    <AddSvg/>
-                                                </div>
-                                            </div>
+                                            <CounterCart product={item} setTotalPrice={setTotalPrice} totalPrice={totalPrice}/>
                                         </div>
                                     </div>
                                 )
@@ -115,16 +121,13 @@ const CartProduct = () => {
                     <Loader/>
                 )}
 
-                
-
-
                 <div className="cart-pay-col"> 
                     <div className="cart-pay-info">
                         <div className="cart-pay-row">
                             <Subheading  text={'Subtotal:'} classnames = '' styles={{
                                 color:'red'
                             }}/>
-                            <Subheading text={'$1403.97'} />
+                            <Subheading text={`$${Math.round(totalPrice * 100) / 100}`} />
                         </div>
                         <div className="cart-pay-row">
                             <Subheading text={'Discount'}/>
@@ -136,7 +139,7 @@ const CartProduct = () => {
                         </div>
                         <div className="cart-total-pay">
                             <Heading6 text={'Total:'}/>
-                            <Heading4 text={'$1357.97'}/>
+                            <Heading4 text={`$${Math.round(totalPrice * 100) / 100}`}/>
                         </div>
                         <ButtonLargeBlue text={'Checkout'} />
                         <div className="cart-pay-methods">

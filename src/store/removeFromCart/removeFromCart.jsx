@@ -3,14 +3,14 @@ import axios from "axios";
 
 export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id, token}) => {
     try{
-        const response = await fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/removefromcart`,
+        const response = await fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/removefromcart/`,
         {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ productsId: id})
+            body: JSON.stringify({ productsId: id })
         });
 
         if (!response.ok) {
