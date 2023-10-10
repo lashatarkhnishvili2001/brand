@@ -17,6 +17,8 @@ import userInfoReducer from './getByEmail/getByEmail.jsx'
 
 import counterReducer from "../features/counter/counterSlice.js"
 
+// import getCartCheck from "./isproductincart/isProductinCart.jsx";
+
 const store = configureStore({
     reducer: {
         categories: CategoriesReducer,
@@ -31,7 +33,8 @@ const store = configureStore({
         cartProducts: CartProductsProducts,
         addItemToCart: AddItemToCart,
         removeFromCart: removeFromCart,
-        counter: counterReducer
+        counter: counterReducer,
+        // CartCheck: getCartCheck,
     }
 })
 

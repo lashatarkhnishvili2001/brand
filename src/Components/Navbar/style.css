@@ -61,6 +61,27 @@
     color: #0067FF;
 }
 
+.navbar-li.dot{
+    position: relative;
+}
+
+.cart-length{
+    position: absolute;
+    left: 35px;
+    background-color: #0067FF;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;
+}
+
+.cart-length .heading-5{
+    color: #FFF;
+    font-size: 12px;
+}   
 
 @media only screen and (max-width: 1024px) {
     .navbar-container {
@@ -70,6 +91,8 @@
 
 @media only screen and (max-width: 688px) {
     .navbar-container{
+        display: flex;
+        align-items: center;
         justify-content: flex-end;
     }
     .navbar-container .display-none{
@@ -87,6 +110,12 @@
 
     .navbar-container :nth-child(1){
         order: 2;
+    }
+    .item-container{
+        height: auto;
+    }
+    .cart-length {
+        left: 50px;
     }
 }
 

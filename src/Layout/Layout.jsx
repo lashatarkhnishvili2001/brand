@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 const Layout = () => {
     const [show, setShow] = useState(false)
 
-    // const userToken = JSON.parse(localStorage.getItem('userToken'));
+    const userToken = JSON.parse(localStorage.getItem('userToken'));
 
     // const dispatch = useDispatch()
 
@@ -29,9 +29,9 @@ const Layout = () => {
 
     return (
         <div className="layout">
-            {!authLocation && ( <Sidebar show={show} setShow={setShow}/> )}
+            {!authLocation && ( <Sidebar show={show} setShow={setShow} cartProducts={cartProducts} userToken={userToken}/> )}
 
-            {!authLocation && ( <Header setShow={setShow} cartProducts={cartProducts}/> )}
+            {!authLocation && ( <Header setShow={setShow} cartProducts={cartProducts} userToken={userToken}/> )}
 
             <Router/>
 

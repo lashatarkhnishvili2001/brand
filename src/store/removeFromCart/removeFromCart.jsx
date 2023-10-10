@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id, token}) => {
+export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id, userToken}) => {
     try{
-        const response = await fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/removefromcart/`,
+        const response = await fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/removefromcart`,
         {
             method: 'DELETE',
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${userToken}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ productsId: id })
+            body: JSON.stringify({ productId: id})
         });
 
         if (!response.ok) {
@@ -18,7 +18,6 @@ export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id
         }
         return response.ok
     }catch (error) {
-        console.error(error);
         throw error;
     }
 })
@@ -44,7 +43,7 @@ const removeFromCartSlice = createSlice({
         },
         [removeFromCart.rejected]: (state, action) => {
             state.loading = false;
-            state.error = action.payload.error
+            state.error = action.payload
         }
     }
 })

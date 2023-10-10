@@ -10,7 +10,7 @@ import { getCartProducts } from '../../../store/getMyCartProducts/getMyCartProdu
 import {removeFromCart} from '../../../store/removeFromCart/removeFromCart';
 
 import './CartProduct.css';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Loader from '../../Loader/Loader';
 import { Modal } from 'antd';
 import CounterCart from '../CounterCart';
@@ -30,6 +30,7 @@ const CartProduct = () => {
     const {removed, loading} = useSelector((state) => state.removeFromCart)
     const {cartProducts} = useSelector((state) => state.cartProducts)
 
+    
     let priceSum = 0
 
     for (const item of cartProducts) {
@@ -57,11 +58,14 @@ const CartProduct = () => {
         setOpen(true);
     };
 
-    const handleOk = (id) => {
-        dispatch(removeFromCart({id, token: userToken.jwt}))
+    const handleOk = useCallback((id) => {
+        const an = userToken.jwt
+        console.log(an)
+        const profile = {an, id};
+        dispatch(removeFromCart({ userToken:userToken.jwt, id}))
         setOpen(false);
         setVisible(true)
-    };
+    },[dispatch]);
 
     const handleCancel = () => {
         setOpen(false);

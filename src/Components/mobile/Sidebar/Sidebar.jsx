@@ -5,7 +5,7 @@ import { BusinessSvg, FavoriteSSvg, HeadsetMicSvg, HomeSvg, InventorySSvg, Langu
 import './sidebar.css';
 import { useEffect, useRef } from 'react';
 
-const Sidebar = ({show, setShow}) => {
+const Sidebar = ({show, setShow, userToken, cartProducts}) => {
     // const [userAvatar, setUserAvatar] = useState(false)
     const sideNavRef = useRef();
 

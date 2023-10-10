@@ -6,7 +6,10 @@ import Cart from '../../Assets/images/cart.png';
 
 import './style.css'
 import { Link, NavLink } from 'react-router-dom';
-const Navbar = () => {
+import { Heading5 } from '../Headings';
+const Navbar = ({cartProducts, userToken}) => {
+
+
     return (
         <div className="navbar-container">
             <ul className="navbar-ul">
@@ -40,13 +43,18 @@ const Navbar = () => {
                         </div>
                     </NavLink>
                 </li>
-                <li className="navbar-li active">
+                <li className="navbar-li active dot">
                     <NavLink className={"nav-link"} to="/Cart">
                         <div className="item-container cart-my-cart" id="cart-icon">
                             <div className="image-container" >
                                 <img src={Cart} alt="" />
                             </div>
                             <span>my cart</span>
+                            { !userToken || !cartProducts.length ? (null) : (
+                            <div className="cart-length">
+                                <Heading5 text={cartProducts.length}/>
+                            </div>
+                            )}
                         </div>
                     </NavLink>
                 </li>

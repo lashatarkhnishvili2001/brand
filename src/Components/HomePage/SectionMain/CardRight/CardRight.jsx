@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Modal } from 'antd'
 import { useDispatch } from 'react-redux'
 
-const CardRight = ({userToken, setLogOutToggle , logOut}) => {
+const CardRight = ({userToken, logOut}) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

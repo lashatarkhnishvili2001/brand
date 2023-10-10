@@ -96,7 +96,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
 
         dispatch(register({user, email, password}))
             .unwrap()
-
+            
 
             setEmail("")
             setUser("")
