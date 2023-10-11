@@ -1,7 +1,7 @@
 
 .seller-container{
     width: 280px;
-    height: 325px;
+    /* height: 325px; */
     background-color: violet;
     padding: 20px 16px;
     border-radius: 6px;
@@ -69,5 +69,11 @@
     }
     .seller-container{
         width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .button-none {
+        display: none;
     }
 }

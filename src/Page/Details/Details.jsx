@@ -1,16 +1,17 @@
 // import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate, useParams } from 'react-router-dom'
+
 import ContentMain from '../../Components/DetailsPage/Content-main'
-import './details.css'
 import BlockDetail from '../../Components/DetailsPage/Block-detail/BlockDetail'
 import RelatedProducts from '../../Components/RelatedProducts'
 import RectangleDetail from '../../Components/DetailsPage/Rectangle-detail'
 import BannerBlue from '../../Components/Banner-blue'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect } from 'react'
-import { getDetails } from '../../store/details/details'
 import Loader from '../../Components/Loader/Loader'
+import { getDetails } from '../../store/details/details'
 
+import './details.css'
 
 const Details = () => {
 

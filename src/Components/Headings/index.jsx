@@ -24,8 +24,8 @@ export const Heading6 = ({ text }) => {
 export const Heading7 = ({ text }) => {
     return <h5 className="heading-7">{text}</h5>;
 };
-export const Subheading = ({ text , classnames, styles}) => {
-    return <p className={`subheading ${classnames}`} style = {styles}>{text}</p>;
+export const Subheading = ({ text , classnames, styles, span}) => {
+    return <p className={`subheading ${classnames}`} style = {styles}>{text}{span}</p>;
 };
 export const Subheading1 = ({ text, onClick }) => {
     return <p className="subheading-1" onClick={onClick}>{text}</p>;

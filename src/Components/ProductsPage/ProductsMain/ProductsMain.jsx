@@ -17,7 +17,6 @@ const ProductsMain = () => {
 
     const dispatch = useDispatch()
 
-
     const {data, loading, error }  = useSelector((state) => state.products);
 
     let products = data
@@ -25,17 +24,16 @@ const ProductsMain = () => {
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch])
-
     
     if(params.currentCategory) {
         products = products.filter((item) => (item.categoryId === params.currentCategory))
     }
 
-    // if(params.brands) {
-    //     products = products.filter((item) => (params.brands.includes(item.brand)))
-    // }else {
-    //     products = data
-    // }
+    if(params.brands) {
+        products = products.filter((item) => (params.brands.includes(item.brand)))
+    }else {
+        products = data
+    }
 
     if(params.priceRange ) {
         let priceSplit = params.priceRange.split('-')
@@ -44,7 +42,6 @@ const ProductsMain = () => {
 
     return (
         <>
-
             <FilterView view={view} setView={setView} setFilterShow={setFilterShow}/>
             <div className="ProductsMain">
                 <div className={`left-main ${filterShow? 'active' : ''}`}>

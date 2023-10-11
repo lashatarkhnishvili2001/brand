@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Alert from '@mui/material/Alert';
 import './contentMain.css'
 import SellerInfo from '../saller-info'
 import { Heading4, Heading6, Heading7, Subheading1, Subheading4 } from '../../Headings'
@@ -37,11 +38,18 @@ const ContentMain = (props) => {
         }
         dispatch(getCartProducts(userToken.jwt))
     }
+
+    if(isCartVisible) {
+        setTimeout(() => {
+            setCartVisible(false)
+        }, 3000)
+    }
     
 
 
     return (
         <section>
+            {isCartVisible && (success ? <Alert severity="success">This is a success alert — check it out!</Alert>: <Alert severity="error">This is an error alert — check it out!</Alert>)}
             <div className="content-main" key={id}>
                 
                 <div className='images-page' >
@@ -87,7 +95,7 @@ const ContentMain = (props) => {
                     <Heading6 text={`$${price}`}/>
                 </div>
                 <div className="info-mobile-button">
-                    <ButtonNormalBlue text={'Send inquiry'}/>
+                    <ButtonNormalBlue text={'Send inquiry'} onClick={() => {handleAddToCart(id)}}/>
                     <div className="info-FavoriteIcon">
                         <FavoriteSvg />
                     </div>
@@ -108,7 +116,7 @@ const ContentMain = (props) => {
                         <Subheading4  text={'50-100 pcs'}/>
                     </div>
                 </div>
-                <div className="short-info">
+                <div className="short-info response-info">
                     <ul>
                         <li>
                             <div className="oneBox">
@@ -163,6 +171,40 @@ const ContentMain = (props) => {
                             </div>
                         </li>
                         <div className="line-info"></div>
+                    </ul>
+                </div>
+                <div className="short-info mobile-info">
+                    <ul>
+                        <li>
+                            <div className="oneBox">
+                                <Subheading1 text={'Condition:'} />
+                            </div>
+                            <div className='span'>
+                                <span>Brand new</span>
+                            </div>
+                        </li>
+                        <li>
+                        <div className="oneBox">
+                                <Subheading1 text={'Material:'} />
+                            </div> <div className='span'>
+                                <span>Plastic</span>
+                            </div>
+                        </li>
+                        <li>
+                        <div className="oneBox">
+                                <Subheading1 text={'Category:'} />
+                            </div> <div className='span'>
+                                <span>Electronics, gadgets</span>
+                            </div>
+                        </li>
+                        <li>
+                        <div className="oneBox">
+                                <Subheading1 text={'Category:'} />
+                            </div> <div className='span'>
+                                <span>23421</span>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
                 

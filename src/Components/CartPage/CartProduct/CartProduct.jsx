@@ -59,9 +59,6 @@ const CartProduct = () => {
     };
 
     const handleOk = useCallback((id) => {
-        const an = userToken.jwt
-        console.log(an)
-        const profile = {an, id};
         dispatch(removeFromCart({ userToken:userToken.jwt, id}))
         setOpen(false);
         setVisible(true)

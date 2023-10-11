@@ -3,7 +3,9 @@ import { setMessage } from "./message";
 
 import authService from "../../Services/auth.service";
 
+
 const User = JSON.parse(localStorage.getItem("User"));
+
 let error = null;
 
 export const register = createAsyncThunk("auth/register",
@@ -74,6 +76,7 @@ const authSlice = createSlice({
         },
         [login.rejected]: (state, action) => {
             state.isLoggedIn = false;
+            state.User= null;
             state.error = action.error.message
         },
         [logout.fulfilled]: (state) => {

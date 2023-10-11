@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './cardRight.css'
 import userImg from '../../../../Assets/images/Avatar.png'
 import { ButtonSmallBlue, ButtonSmallWhite } from '../../../Buttons'
 import { Heading6 } from '../../../Headings'
 import { Link, useNavigate } from 'react-router-dom'
 import { Modal } from 'antd'
-import { useDispatch } from 'react-redux'
 
 const CardRight = ({userToken, logOut}) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -20,7 +18,6 @@ const CardRight = ({userToken, logOut}) => {
   };
 
   
-
   const handleOk = () => {
     logOut()
     setIsModalOpen(false);

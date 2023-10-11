@@ -4,8 +4,9 @@ import { Subheading } from '../../Headings';
 import { BusinessSvg, FavoriteSSvg, HeadsetMicSvg, HomeSvg, InventorySSvg, LanguageSvg, ListSvg } from '../../../static/icons';
 import './sidebar.css';
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
-const Sidebar = ({show, setShow, userToken, cartProducts}) => {
+const Sidebar = ({show, setShow}) => {
     // const [userAvatar, setUserAvatar] = useState(false)
     const sideNavRef = useRef();
 
@@ -31,19 +32,25 @@ const Sidebar = ({show, setShow, userToken, cartProducts}) => {
                     <div className="sidebar-user-img">
                         <img src={avatarUSer} alt="" />
                     </div>
-                    <div className="sidebar-user-link">
-                        <Subheading text={'Sign in | Register'}/>
-                    </div>
+                    <Link to="/authorization">
+                        <div className="sidebar-user-link">
+                            <Subheading text={'Sign in | Register'}/>
+                        </div>
+                    </Link>
                 </div>
                 <div className="sidebar-main">
+                    <Link to="/" >
                     <div className='sidebar-item'>
                         <HomeSvg/>
                         <Subheading text={'Home'} />
                     </div>
+                    </Link>
+                    <Link to="/categories" >
                     <div className='sidebar-item'>
                         <ListSvg/>
                         <Subheading text={'Categories'} />
                     </div>
+                    </Link>
                     <div className='sidebar-item'>
                         <FavoriteSSvg/>
                         <Subheading text={'Favorites'} />

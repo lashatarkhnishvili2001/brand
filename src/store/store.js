@@ -6,18 +6,14 @@ import LatestProducts from "./lateslProducts/lateslProducts.jsx";
 import MostDemandProducts from "./mostDemandProducts/mostDemandProducts.jsx";
 import products from "./products/products.jsx";
 import details from "./details/details.jsx";
-
 import CartProductsProducts from "./getMyCartProducts/getMyCartProducts.jsx";
 import AddItemToCart  from "./addInCart/addInCart.jsx";
 import removeFromCart from "./removeFromCart/removeFromCart.jsx";
-
 import authReducer from '../Slices/auth/auth.jsx';
 import  messageReducer from '../Slices/auth/message.jsx'
 import userInfoReducer from './getByEmail/getByEmail.jsx'
-
 import counterReducer from "../features/counter/counterSlice.js"
-
-// import getCartCheck from "./isproductincart/isProductinCart.jsx";
+// import brands from "./brands/brands.jsx";
 
 const store = configureStore({
     reducer: {
@@ -34,7 +30,7 @@ const store = configureStore({
         addItemToCart: AddItemToCart,
         removeFromCart: removeFromCart,
         counter: counterReducer,
-        // CartCheck: getCartCheck,
+        // brands: brands,
     }
 })
 

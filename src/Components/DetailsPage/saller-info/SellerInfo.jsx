@@ -21,7 +21,7 @@ const SellerInfo = ({handleAddToCart , id}) => {
                 <ul>
                     <li>
                         <img src={germany} alt="" />
-                        <Subheading text={'Germany, Berlin'} />
+                        <Subheading text={'Germany'}  span={' Berlin'}/>
                     </li>
                     <li>
                         <Verified_user />
@@ -33,8 +33,10 @@ const SellerInfo = ({handleAddToCart , id}) => {
                     </li>
                 </ul>
             </div>
-            <ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'Send inquiry'} />
-            <ButtonNormalWhite text={'Seller’s profile'} />
+            <div className="button-none">
+                <ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'Send inquiry'} />
+                <ButtonNormalWhite text={'Seller’s profile'} />
+            </div>
         </div>
         <div className="favorite-container">
             <ButtonLargeWhiteIcon text={'Save for later'} icon={<FavoriteSvg/>}/>

@@ -1,19 +1,17 @@
-import axios from "axios";
-
-const Url = 'https://amazon-digital-prod.azurewebsites.net/api/'
-
-
+import authApi from "../Api/axios";
+// const authApi = 'https://amazon-digital-prod.azurewebsites.net/api/'
 
 const register = (email, user, password) => {
-    return axios.post(Url + '/user/registerUser',
+    return authApi.post('/user/registerUser',
     {email: email, userName: user, password: password},
     {headers: {'Content-Type' : 'application/json'}},
     )
 }
 
 const login = async (email, password) => {
-    return await axios.post(Url + 'User/LogIn',
+    return await authApi.post('User/LogIn',
     { email: email, password: password },
+    {headers: {'Content-Type' : 'application/json'}},
     )
     .then((response) => {
         if(response.data.jwt) {

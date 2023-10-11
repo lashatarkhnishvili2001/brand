@@ -12,7 +12,6 @@ export const addItemToCart = createAsyncThunk('cart/addInCart', async ({ id, tok
             'Content-Type': 'application/json',
         }},
         );
-            console.log(id, token)
         }catch (error) {
             console.log(error);
             return error;
