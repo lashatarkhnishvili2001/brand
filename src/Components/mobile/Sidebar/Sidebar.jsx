@@ -61,7 +61,7 @@ const Sidebar = ({show, setShow}) => {
                     <div className="sidebar-user-img">
                         <img src={avatarUSer} alt="" />
                     </div>
-                    {isLoggedIn ? (<>
+                    {isLoggedIn? (<>
                         <div className="sidebar-user-link">
                             <Subheading text={'Log Out'} onClick={() => showModal()}/>
                         </div>
