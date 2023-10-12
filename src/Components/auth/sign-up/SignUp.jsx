@@ -13,6 +13,7 @@ import { clearMessage } from '../../../Slices/auth/message';
 import { useDispatch } from 'react-redux';
 
 
+
 const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
     const emailRef = useRef();
     const userRef = useRef();

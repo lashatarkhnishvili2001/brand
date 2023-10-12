@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getCartProducts } from '../../../store/getMyCartProducts/getMyCartProducts'
 import { addItemToCart } from '../../../store/addInCart/addInCart'
+import Swal from 'sweetalert2';
 
 const ContentMain = (props) => {
     const {product} = props;
@@ -20,12 +21,23 @@ const ContentMain = (props) => {
     const [isCartVisible, setCartVisible] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const userToken = JSON.parse(localStorage.getItem('userToken'));
-
-    const { cartProducts} = useSelector((state) => state.cartProducts);
-    console.log(cartProducts)
-
     const dispatch = useDispatch();
+
+    const userToken = JSON.parse(localStorage.getItem('userToken'));
+    
+    const { cartProducts} = useSelector((state) => state.cartProducts);
+
+    const {isLoggedIn} = useSelector((state) => state.auth)
+
+    const handleAuthAlert = () => {
+        Swal.fire({
+            icon: 'error',
+            title:"sos...",
+            text: 'you must be logged in',
+            footer: '<a href="/authorization"> Wanna Authorization </a>'
+        })
+    }
+
 
     const handleAddToCart = async (id) => {
         if(JSON.stringify(cartProducts).includes(id)) {
@@ -95,7 +107,9 @@ const ContentMain = (props) => {
                     <Heading6 text={`$${price}`}/>
                 </div>
                 <div className="info-mobile-button">
-                    <ButtonNormalBlue text={'Send inquiry'} onClick={() => {handleAddToCart(id)}}/>
+                    {isLoggedIn? (<ButtonNormalBlue text={'Send inquiry'} onClick={() => {handleAddToCart(id)}}/>) : (<ButtonNormalBlue text={'Send inquiry'} onClick={() => {handleAuthAlert()}}/>)}
+                    
+                    
                     <div className="info-FavoriteIcon">
                         <FavoriteSvg />
                     </div>
@@ -210,7 +224,7 @@ const ContentMain = (props) => {
                 
             </div>
             
-            <SellerInfo handleAddToCart={handleAddToCart} id={id}/>
+            <SellerInfo handleAddToCart={handleAddToCart} handleAuthAlert={handleAuthAlert} id={id} isLoggedIn={isLoggedIn}/>
             </div>
 
         </section>

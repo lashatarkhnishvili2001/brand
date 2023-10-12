@@ -21,6 +21,7 @@ const Details = () => {
 
     const {details, loading} = useSelector((state) => state.details)
 
+
     useEffect(() => {
         dispatch(getDetails(productId));
     }, [dispatch, productId]);

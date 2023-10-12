@@ -24,6 +24,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .image-container{

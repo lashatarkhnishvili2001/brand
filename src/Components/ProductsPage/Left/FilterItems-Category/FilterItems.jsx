@@ -17,23 +17,22 @@ const FilterItems = ({categories}) => {
         const searchParams = new URLSearchParams();
         searchParams.set('category', category);
         searchParams.set('currentCategory', id );
-        // searchParams.set('pageNumber', '1');
 
         navigate(`/products?${searchParams.toString()}`)
     }
 
-    const [showMore, setShowMore] = useState(true);
-    const [list, setList] = useState(slice(categories, 0 , LIMIT));
-    const [index, setIndex] = useState(LIMIT);
+    const [seeAll, setSeeAll] = useState(false);
+    // const [list, setList] = useState(slice(categories, 0 , LIMIT));
+    // const [index, setIndex] = useState(LIMIT);
 
-    const loadMore = () => {
-        const newIndex = index + LIMIT;
-        const newShowMore = newIndex < (LENGTH -1)
-        const newList = concat(list, slice(categories, index, newIndex));
-        setIndex(newIndex);
-        setList(newList);   
-        setShowMore(newShowMore);
-    }
+    // const loadMore = () => {
+    //     const newIndex = index + LIMIT;
+    //     const newShowMore = newIndex < (LENGTH -1)
+    //     const newList = concat(list, slice(categories, index, newIndex));
+    //     setIndex(newIndex);
+    //     setList(newList);   
+    //     setShowMore(newShowMore);
+    // }
 
     return (
         <div className={`filters ${toggle? 'active' : ''}`} >
@@ -43,14 +42,14 @@ const FilterItems = ({categories}) => {
                         </div>
                         <div className="filters-body">
                             <ul className='category-list-ul'>
-                                {list.map((value, index) =>  {
+                                {categories.map((value, index) =>  {
                                     return (
                                         <li className='category-list-li' key={index} onClick={() => handleClick(value.id, value.name)}>{value.name}</li>   
                                         )
                                     })}
                                     <li className="list-li">
                                     <div className="see-all">
-                                        {showMore && <Subheading1 text={'see-all'} onClick={loadMore} /> }
+                                        <Subheading1 text={seeAll ? 'see-all' : 'less'} onClick={() => (setSeeAll(prev => !prev))} />
                                     </div>
                                 </li>
                             </ul>

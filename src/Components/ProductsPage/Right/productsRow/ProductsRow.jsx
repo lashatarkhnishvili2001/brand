@@ -23,8 +23,8 @@ const {products} = props;
                         </NavLink>
                     </div>
                     <div className="product-description-row">
-                    <div className="product-name">
-                            <Heading5 text={brand}/>
+                        <div className="product-name">
+                            <Heading5 text={name}/>
                         </div>
                         <div className='price'>
                             <ins><Heading4 text={`$${price}`}/></ins>
@@ -47,8 +47,6 @@ const {products} = props;
                         <NavLink className={"nav-link"} to={`/details/${id}`} >
                         <Heading5 text={'View details'}/>
                         </NavLink>
-                        
-
                         <div className="wishlist-row">
                             <HeartSvg/> 
                         </div>

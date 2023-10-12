@@ -8,20 +8,44 @@ import { EyeSlashSvg, EyeSolidSvg } from '../../static/icons'
 
 const Auth = () => {
 
-    
-    
-    
-
     const [action, setAction] = useState(false)
 
     const [visible, setVisible] = useState(false);
+
     const Icon = visible ? <EyeSolidSvg/> : <EyeSlashSvg/> 
+
     const handleClickShowPassword = () => {
         setVisible(!visible);
     };
     const InputType = visible ? 'text' : 'password' ;
 
-
+        // class App extends React.Component {
+        //     constructor(props) {
+        //     super(props);
+        //     this.state = {
+        //         isLogginActive: true
+        //     };
+        //     }
+        
+        //     render() {
+        //     const { isLogginActive } = this.state;
+        //     const current = isLogginActive ? "Register" : "Login";
+        //     return (
+        //         <div className="App">
+        //         <div className="login">
+        //             <div className="container" ref={ref => (this.container = ref)}>
+        //             {isLogginActive && (
+        //                 <SignIn containerRef={ref => (this.current = ref)} />
+        //             )}
+        //             {!isLogginActive && (
+        //                 <SignUp containerRef={ref => (this.current = ref)} />
+        //             )}
+        //             </div>
+        //         </div>
+        //         </div>
+        //     );
+        //     }
+        // }
 
 
     return (

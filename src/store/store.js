@@ -17,7 +17,7 @@ import counterReducer from "../features/counter/counterSlice.js"
 
 const store = configureStore({
     reducer: {
-        categories: CategoriesReducer,
+        categories: CategoriesReducer,  
         offeredProducts: OffersProducts,
         latestProducts: LatestProducts,
         mostDemandProducts: MostDemandProducts,

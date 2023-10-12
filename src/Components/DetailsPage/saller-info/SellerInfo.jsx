@@ -4,7 +4,7 @@ import { Heading3, Subheading } from '../../Headings';
 import germany from '../../../Assets/images/DE@2x.png';
 import { Verified_user, Language, FavoriteSvg } from '../../../static/icons';
 import { ButtonLargeWhiteIcon, ButtonNormalBlue, ButtonNormalWhite } from '../../Buttons';
-const SellerInfo = ({handleAddToCart , id}) => {
+const SellerInfo = ({handleAddToCart , id, handleAuthAlert, isLoggedIn}) => {
 
 
     return (
@@ -34,7 +34,9 @@ const SellerInfo = ({handleAddToCart , id}) => {
                 </ul>
             </div>
             <div className="button-none">
-                <ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'Send inquiry'} />
+                {isLoggedIn ? (<ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'Send inquiry'} />) : (<ButtonNormalBlue onClick={() => {handleAuthAlert()}} text={'Send inquiry'} />)}
+                
+                
                 <ButtonNormalWhite text={'Seller’s profile'} />
             </div>
         </div>

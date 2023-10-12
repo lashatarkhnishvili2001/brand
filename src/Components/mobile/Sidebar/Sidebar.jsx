@@ -3,12 +3,41 @@ import avatarUSer from '../../../Assets/images/AvatarUser.png';
 import { Subheading } from '../../Headings';
 import { BusinessSvg, FavoriteSSvg, HeadsetMicSvg, HomeSvg, InventorySSvg, LanguageSvg, ListSvg } from '../../../static/icons';
 import './sidebar.css';
-import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Modal } from 'antd';
+import { logout } from '../../../Slices/auth/auth';
 
 const Sidebar = ({show, setShow}) => {
     // const [userAvatar, setUserAvatar] = useState(false)
     const sideNavRef = useRef();
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const {isLoggedIn} = useSelector((state) => state.auth)
+
+    const [open, setOpen] = useState(false);
+    const [confirmLoading, setConfirmLoading] = useState(false);
+
+    const showModal = () => {
+        setOpen(true);
+    };
+
+    const handleOk = useCallback(() => {
+        setConfirmLoading(true);
+        
+        setOpen(false);
+        dispatch(logout());
+        navigate('/')
+    }, [dispatch, navigate]);
+
+    const handleCancel = () => {
+        setOpen(false);
+    };
+
+
 
     useEffect(() => {
         let sidebarHandler = (e) => {
@@ -16,9 +45,7 @@ const Sidebar = ({show, setShow}) => {
                 setShow(false)
             }
         };
-
         document.addEventListener('mousedown', sidebarHandler)
-
         return() => {
             document.removeEventListener('mousedown', sidebarHandler)
         }
@@ -32,11 +59,30 @@ const Sidebar = ({show, setShow}) => {
                     <div className="sidebar-user-img">
                         <img src={avatarUSer} alt="" />
                     </div>
-                    <Link to="/authorization">
+                    {isLoggedIn ? (<>
                         <div className="sidebar-user-link">
-                            <Subheading text={'Sign in | Register'}/>
+                            <Subheading text={'Log Out'} onClick={() => showModal()}/>
                         </div>
-                    </Link>
+                        <Modal
+                        title="You must be authorized"
+                        open={open}
+                        onOk={handleOk}
+                        confirmLoading={confirmLoading}
+                        onCancel={handleCancel}
+                        okText='Log Out'
+                        />
+                    
+                        </>
+                    ): (<Link to="/authorization">
+                    <div className="sidebar-user-link">
+                        <Subheading text={'Sign in | Register'}/>
+                    </div>
+                </Link>)}
+                    {/* // <Link to="/authorization">
+                    //     <div className="sidebar-user-link">
+                    //         <Subheading text={'Sign in | Register'}/>
+                    //     </div>
+                    // </Link> */}
                 </div>
                 <div className="sidebar-main">
                     <Link to="/" >
@@ -45,7 +91,7 @@ const Sidebar = ({show, setShow}) => {
                         <Subheading text={'Home'} />
                     </div>
                     </Link>
-                    <Link to="/categories" >
+                    <Link to="/products" >
                     <div className='sidebar-item'>
                         <ListSvg/>
                         <Subheading text={'Categories'} />

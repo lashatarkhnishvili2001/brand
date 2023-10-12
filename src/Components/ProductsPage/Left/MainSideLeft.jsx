@@ -30,10 +30,10 @@ const MainSideLeft = () => {
                     <FilterItemBrand />
                 </div>
                 <div className="filters-list-li">
-                    <FilterItemFeatures/>
+                    <FilterPrice/>
                 </div>
                 <div className="filters-list-li">
-                    <FilterPrice/>
+                    <FilterItemFeatures/>
                 </div>
             </div>
         </div>

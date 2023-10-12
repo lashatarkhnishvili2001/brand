@@ -29,11 +29,11 @@ const ProductsMain = () => {
         products = products.filter((item) => (item.categoryId === params.currentCategory))
     }
 
-    if(params.brands) {
-        products = products.filter((item) => (params.brands.includes(item.brand)))
-    }else {
-        products = data
-    }
+    // if(params.brands) {
+    //     products = products.filter((item) => (params.brands.includes(item.brand)))
+    // }else {
+    //     products = data
+    // }
 
     if(params.priceRange ) {
         let priceSplit = params.priceRange.split('-')

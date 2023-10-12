@@ -50,10 +50,8 @@ const MainSideRight = ({view, setView, products, params } ) => {
 
                 {view ? (
                     <ProductsRow products={products}/>
-                    // <ProductsRow />
                 ) : ( 
                     <ProductsCol products={products} /> 
-                    // <ProductsCol  /> 
                 )}
 
             </div>

@@ -49,7 +49,11 @@ const FilterItemFeatures = () => {
                                 <Subheading1 text={'see-all'} />
                             </div>
                         </li>
-                        
+                        <li className="list-li">
+                            <div className="see-all">
+                                <Subheading1 style={{color: 'red'}} text={'no function'}  />
+                            </div>
+                        </li>
                     </ul>
                 </form>
             </div>

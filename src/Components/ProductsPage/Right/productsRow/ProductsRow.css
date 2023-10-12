@@ -44,6 +44,7 @@
 .products-list-ul-row .products-list-li-row .product-container-row .product-description-row .product-name{
     margin-bottom: 16px;
 }
+
 .products-list-ul-row .products-list-li-row .product-container-row .product-description-row .price{
     display: flex;
     gap: 6px;
