@@ -80,7 +80,7 @@ const authSlice = createSlice({
             state.error = action.error.message
         },
         [logout.fulfilled]: (state) => {
-            state.isLoading = false;
+            state.isLoggedIn = false;
             state.User = null;
         },
     },

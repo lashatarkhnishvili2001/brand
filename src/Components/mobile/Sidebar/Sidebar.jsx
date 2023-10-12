@@ -27,10 +27,12 @@ const Sidebar = ({show, setShow}) => {
 
     const handleOk = useCallback(() => {
         setConfirmLoading(true);
-        
-        setOpen(false);
-        dispatch(logout());
-        navigate('/')
+        setTimeout(() => {
+            setOpen(false);
+            dispatch(logout());
+            navigate('/')
+            setConfirmLoading(false);
+            }, 1000);
     }, [dispatch, navigate]);
 
     const handleCancel = () => {
@@ -70,14 +72,15 @@ const Sidebar = ({show, setShow}) => {
                         confirmLoading={confirmLoading}
                         onCancel={handleCancel}
                         okText='Log Out'
-                        />
-                    
+                        > </Modal>
                         </>
-                    ): (<Link to="/authorization">
-                    <div className="sidebar-user-link">
-                        <Subheading text={'Sign in | Register'}/>
-                    </div>
-                </Link>)}
+                    ): (
+                    <Link to="/authorization">
+                        <div className="sidebar-user-link">
+                            <Subheading text={'Sign in | Register'}/>
+                        </div>
+                    </Link>
+                    )}
                     {/* // <Link to="/authorization">
                     //     <div className="sidebar-user-link">
                     //         <Subheading text={'Sign in | Register'}/>
