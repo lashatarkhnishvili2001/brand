@@ -48,6 +48,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
 
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         if(params.account === 'register'){
             setSuccess(true);
@@ -103,6 +104,7 @@ const SignUp = ({setAction, InputType, Icon, handleClickShowPassword}) => {
             setUser("")
             setPassword("")
             setMathPwd("")
+
 
         // ---------------------------------------------
         // try {

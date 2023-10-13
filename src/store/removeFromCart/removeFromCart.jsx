@@ -9,7 +9,9 @@ export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id
                 Authorization: `Bearer ${userToken}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ productId: id})
+            body: JSON.stringify({
+                productId: id
+            })
         });
 
         if (!response.ok) {
@@ -23,7 +25,7 @@ export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id
 
 const initialState = {
     removed:false,
-    loading:false,
+    removeLoading:false,
     error: null,
 }
 
@@ -34,14 +36,14 @@ const removeFromCartSlice = createSlice({
     reducers: {  },
     extraReducers: {
         [removeFromCart.pending]: (state) => {
-            state.loading = true;
+            state.removeLoading = true;
         },
         [removeFromCart.fulfilled]: (state, action) => {
-            state.loading = false;
+            state.removeLoading = false;
             state.removed = action.payload
         },
         [removeFromCart.rejected]: (state, action) => {
-            state.loading = false;
+            state.removeLoading = false;
             state.error = action.payload
         }
     }

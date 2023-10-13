@@ -4,9 +4,11 @@ import { setMessage } from "./message";
 import authService from "../../Services/auth.service";
 
 
-const User = JSON.parse(localStorage.getItem("User"));
+const User = JSON.parse(localStorage.getItem("userToken"));
+console.log(User)
 
 let error = null;
+let loading = false;
 
 export const register = createAsyncThunk("auth/register",
     async ({ email, user, password}, thunkAPI ) => {
@@ -55,7 +57,7 @@ export const logout = createAsyncThunk("auth/logout", () => {
     authService.logout();
 });
 
-const initialState = User ? {isLoggedIn: true, User } : {isLoggedIn: false, User: null, error};
+const initialState = User ? {isLoggedIn: true, User , loading } : {isLoggedIn: false, User: null, error , loading};
 
 const authSlice = createSlice({
     name: 'user',
@@ -69,13 +71,18 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
             state.error = action.error.message
         },
+        [login.pending]: (state) => {
+            state.loading = true;
+        },
         [login.fulfilled]: (state, action) => {
             state.isLoggedIn = true;
+            state.loading = false;
             state.User = action.payload.User;
             state.email = action.payload.email;
         },
         [login.rejected]: (state, action) => {
             state.isLoggedIn = false;
+            state.loading = false;
             state.User= null;
             state.error = action.error.message
         },

@@ -17,6 +17,7 @@ const Navbar = ({cartProducts, userToken}) => {
     const navigate = useNavigate()
 
     const {isLoggedIn} = useSelector((state) => state.auth)
+    console.log(isLoggedIn)
 
     const [open, setOpen] = useState(false);
     const [confirmLoading, setConfirmLoading] = useState(false);
@@ -26,7 +27,6 @@ const Navbar = ({cartProducts, userToken}) => {
     };
     const handleOk = () => {
         setConfirmLoading(true);
-        
         setTimeout(() => {
         setOpen(false);
         setConfirmLoading(false);
@@ -73,8 +73,8 @@ const Navbar = ({cartProducts, userToken}) => {
                     {/* </NavLink> */}
                 </li>
                 {isLoggedIn ? (<li className="navbar-li active dot">
-                    <NavLink className={"nav-link"} to="/Cart">
-                        <div className="item-container cart-my-cart" id="cart-icon">
+                    {/* <NavLink className={"nav-link"} to="/Cart"> */}
+                        <div className="item-container cart-my-cart" id="cart-icon " onClick={() => navigate('/Cart')}>
                             <div className="image-container" >
                                 <img src={Cart} alt="" />
                             </div>
@@ -85,7 +85,7 @@ const Navbar = ({cartProducts, userToken}) => {
                             </div>
                             )}
                         </div>
-                    </NavLink>
+                    {/* </NavLink> */}
                 </li>) : (
                     <li className="navbar-li active dot">
                         <div className="item-container cart-my-cart" onClick={() => showModal()} id="cart-icon">

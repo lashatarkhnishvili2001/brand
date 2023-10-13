@@ -7,6 +7,9 @@ export const getCartProducts = createAsyncThunk('cart/getCartProducts', async (u
         {headers: {
             Authorization: `Bearer ${userToken}`,
         }},
+        {body: JSON.stringify({
+            productId: id
+        })}
         );
         return response.data
     }catch (error) {

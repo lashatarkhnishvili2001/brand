@@ -7,7 +7,9 @@ import { MdMarkEmailRead, MdMarkEmailUnread } from 'react-icons/md'
 import { TbLockCheck, TbLockX } from 'react-icons/tb'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../../../Slices/auth/auth'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import Loader from '../../Loader/Loader'
+
 
 const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     
@@ -26,6 +28,8 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     const [success, setSuccess] = useState(false);
     
     // const [authValidation, setAuthValidation] = useState("")
+
+    const {isLoggedIn, loading} = useSelector((state) => state.auth)
 
     const dispatch = useDispatch()
 
@@ -63,6 +67,9 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
         setEmail('');
         setPassword('');
 
+        if(isLoggedIn) {
+            navigate('/')
+        }
         
         // try {
         //     setAuthValidation("")
@@ -91,9 +98,12 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
         // setPassword("")
         // setEmail('')
         // }
+    }
 
 
 
+    if(loading) {
+        return <Loader/>
     }
 
     return (

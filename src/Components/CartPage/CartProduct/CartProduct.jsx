@@ -30,7 +30,6 @@ const CartProduct = () => {
     const {removed, loading} = useSelector((state) => state.removeFromCart)
     const {cartProducts} = useSelector((state) => state.cartProducts)
 
-    
     let priceSum = 0
 
     for (const item of cartProducts) {

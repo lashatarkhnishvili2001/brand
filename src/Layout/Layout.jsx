@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { getCartProducts } from "../store/getMyCartProducts/getMyCartProducts";
 import Header from "../Components/Header"
 import Router from "../Router";
@@ -9,6 +9,7 @@ import Sidebar from "../Components/mobile/Sidebar";
 
 import './style.css';
 import FooterOwner from "../Components/footerOwner";
+import { getCartProducts } from "../store/getMyCartProducts/getMyCartProducts";
 
 
 const Layout = () => {
@@ -16,19 +17,21 @@ const Layout = () => {
 
     const userToken = JSON.parse(localStorage.getItem('userToken'));
 
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     const {cartProducts} = useSelector((state) => state.cartProducts)
-    // const {loading} = useSelector((state) => state.addItemToCart)
+    const {addLoading} = useSelector((state) => state.addItemToCart)
+    const {removeLoading} = useSelector((state) => state.removeFromCart)
+    const {loading} = useSelector((state) => state.auth)
 
     const location = useLocation()
     const authLocation = location.pathname === '/authorization';
 
-    // useEffect(() => {
-    //     if(userToken) {
-    //         dispatch(getCartProducts(userToken.jwt))
-    //     }
-    // }, [dispatch, loading])
+    useEffect(() => {
+        if(userToken) {
+            dispatch(getCartProducts(userToken.jwt))
+        }
+    }, [dispatch, addLoading, removeLoading, loading])
 
     return (
         <div className="layout">

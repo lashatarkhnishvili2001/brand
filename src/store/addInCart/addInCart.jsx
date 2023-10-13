@@ -19,7 +19,7 @@ export const addItemToCart = createAsyncThunk('cart/addInCart', async ({ id, tok
 }); 
 
 const initialState = {
-    loading:false,
+    addLoading:false,
     error:false,
 }
 
@@ -30,13 +30,13 @@ const addItemToCartSlice = createSlice({
     reducers: {  },
     extraReducers: {
         [addItemToCart.pending]: (state) => {
-            state.loading = true;
+            state.addLoading = true;
         },
         [addItemToCart.fulfilled]: (state) => {
-            state.loading = false
+            state.addLoading = false
         },
         [addItemToCart.rejected]: (state, action) => {
-            state.loading = false
+            state.addLoading = false
             state.error = action.payload.error
         }
     }
