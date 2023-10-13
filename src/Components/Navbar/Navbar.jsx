@@ -53,24 +53,24 @@ const Navbar = ({cartProducts, userToken}) => {
                     </NavLink>
                 </li>
                 <li className="navbar-li display-none ">
-                    <NavLink className={"nav-link"} to="/">    
+                    {/* <NavLink className={"nav-link"} to="/">     */}
                         <div className="item-container">
                             <div className="image-container">
                                 <img src={Message} alt="" />
                             </div>
                             <span>message</span>
                         </div>
-                    </NavLink>
+                    {/* </NavLink> */}
                 </li>
                 <li className="navbar-li display-none">
-                    <NavLink className={"nav-link"} to="/">
+                    {/* <NavLink className={"nav-link"} to="/"> */}
                         <div className="item-container">
                             <div className="image-container">
                                 <img src={Orders} alt="" />
                             </div>
                             <span>orders</span>
                         </div>
-                    </NavLink>
+                    {/* </NavLink> */}
                 </li>
                 {isLoggedIn ? (<li className="navbar-li active dot">
                     <NavLink className={"nav-link"} to="/Cart">

@@ -1,0 +1,16 @@
+.footer-language-section{
+    background-color: #DEE2E7;
+}
+
+.footerOwner-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 128px;
+}
+
+@media (max-width:1000px) {
+    .footerOwner-container{
+        padding: 20px;
+    }
+}

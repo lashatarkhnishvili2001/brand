@@ -6,7 +6,7 @@
 }
 
 .detail-two-box{
-    padding: 20px;
+    padding-left: 20px;
     display: flex;
 }
 
@@ -16,6 +16,7 @@
     background: var(--gray-200, #EFF2F4);
     padding: 10px 10px;
     text-transform: capitalize;
+    border: 1px solid #E0E7E9;
 }
 
 .detail-two-box .detail-item-right{
@@ -40,6 +41,12 @@
 
 .detail-feature{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.detail-feature-col {
     display: flex;
     gap: 7px;
 }

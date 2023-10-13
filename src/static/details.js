@@ -33,6 +33,18 @@ export const detailsArray = [
             'Duis aute irure dolor in reprehenderit',
             "Some great feature name here"
         ],
+        feature: [
+            'Some great feature name here',
+            'Lorem ipsum dolor sit amet, consectetur ',
+            'Duis aute irure dolor in reprehenderit',
+            "Some great feature name here"
+        ],
+        feature: [
+            'Some great feature name here',
+            'Lorem ipsum dolor sit amet, consectetur ',
+            'Duis aute irure dolor in reprehenderit',
+            "Some great feature name here"
+        ],
     },
     {
         id:'reviews',

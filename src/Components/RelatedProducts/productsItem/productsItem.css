@@ -19,10 +19,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .productsItem-li .background-img img{
-    /* width: 100%; */
+    width: 139.844px;
+    height: 110.222px;  
 }
 
 /* 

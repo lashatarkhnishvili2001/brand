@@ -38,6 +38,13 @@
     .email-container .ButtonNormalBlue{
         margin:  10px 0;
     }
+    .email-container form {
+        margin: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 }
 
 /* .input-container input{

@@ -8,6 +8,7 @@ import Footer from "../Components/footer";
 import Sidebar from "../Components/mobile/Sidebar";
 
 import './style.css';
+import FooterOwner from "../Components/footerOwner";
 
 
 const Layout = () => {
@@ -38,6 +39,8 @@ const Layout = () => {
             <Router/>
 
             {!authLocation && ( <footer>  <Footer /> </footer> )}
+            {!authLocation && ( <footer>  <FooterOwner /> </footer> )}
+
         </div>
     )
 }

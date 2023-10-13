@@ -56,10 +56,6 @@ const {products} = props;
                     )
                 })
             }
-
-            
-            
-
     </ul>
     )
 }

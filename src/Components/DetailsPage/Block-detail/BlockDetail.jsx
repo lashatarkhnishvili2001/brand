@@ -21,7 +21,7 @@ const BlockDetail = (props) => {
 
 
     // useEffect(() =>{
-    //     const currentElement = detailsArray.find((item) => item.id === detailsID.toLocaleLowerCase()); 
+    //     const currentElement = detailsArray.find((item) => item.id === detailsID); 
     //     if(currentElement) {
     //         setChosenDetails({
     //             found:true,
@@ -61,25 +61,59 @@ const BlockDetail = (props) => {
                         <div className="detail-item-right">
                             <Subheading1 text={'#8786867'}/>
                         </div>
-                        {chosenDetails.data?.name && 
-                            <ul>
-                                <li>
-                                    <div className="detail-item-left">
-                                        <Subheading1 text={chosenDetails.data?.name.model}/>
-                                        
-                                    </div>
-                                </li>
-                            </ul>
-                        }
+                    </div>
+                    <div className="detail-two-box">
+                        <div className="detail-item-left">
+                            <Subheading1 text={'Style:'}/>
+                        </div>
+                        <div className="detail-item-right">
+                            <Subheading1 text={'Classic style'}/>
+                        </div>
+                    </div>
+                    <div className="detail-two-box">
+                        <div className="detail-item-left">
+                            <Subheading1 text={'Certificate:'}/>
+                        </div>
+                        <div className="detail-item-right">
+                            <Subheading1 text={'ISO-898921212'}/>
+                        </div>
+                    </div>
+                    <div className="detail-two-box">
+                        <div className="detail-item-left">
+                            <Subheading1 text={'Size:'}/>
+                        </div>
+                        <div className="detail-item-right">
+                            <Subheading1 text={'34mm x 450mm x 19mm'}/>
+                        </div>
+                    </div>
+                    <div className="detail-two-box">
+                        <div className="detail-item-left">
+                            <Subheading1 text={'Memory:'}/>
+                        </div>
+                        <div className="detail-item-right">
+                            <Subheading1 text={'36GB RAM'}/>
+                        </div>
                     </div>
                     <div className='detail-feature'>
-                        {chosenDetails.data?.feature?.map((item, index) => {
+                        {/* {detailsArray.map((item, index) => {
                             return <React.Fragment key={index}>
-                                <div>
-                                <CheckSvg/> <Subheading text={item}/>
+                                <div className='detail-feature-col'>
+                                <CheckSvg/> <Subheading text={item.feature}/>
                                 </div>
                             </React.Fragment>
-                        })}
+                        })} */}
+                        <div className='detail-feature-col'>
+                        <CheckSvg/> <Subheading text={"Some great feature name here"}/>
+                        </div>
+                        <div className='detail-feature-col'>
+                        <CheckSvg/> <Subheading text={"Lorem ipsum dolor sit amet, consectetur"}/>
+                        </div>
+                        <div className='detail-feature-col'>
+                        <CheckSvg/> <Subheading text={"Duis aute irure dolor in reprehenderit"}/>
+                        </div>
+                        <div className='detail-feature-col'>
+                        <CheckSvg/> <Subheading text={"Some great feature name here"}/>
+                        </div>
                     </div>
 
                 </div>

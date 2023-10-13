@@ -30,5 +30,8 @@
     .country-list-container .country-list-ul.block{
         display: none;
     }
+    .section-country{
+        padding: 0 10px;
+    }
 }
 
