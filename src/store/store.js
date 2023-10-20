@@ -31,7 +31,8 @@ const store = configureStore({
         removeFromCart: removeFromCart,
         counter: counterReducer,
         // brands: brands,
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck:false})
 })
 
 export default store

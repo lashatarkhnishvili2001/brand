@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { AppleSvg, EmailSvgSvg, FacebookSvg, GoogleSvg, PasswordSvg } from '../../../static/icons'
-import './signIn.css'
-import { ButtonLargeBlue } from '../../Buttons'
-import { EMAIL_REGEX, PWD_REGEX } from '../REGEX/REGEX'
-import { MdMarkEmailRead, MdMarkEmailUnread } from 'react-icons/md'
-import { TbLockCheck, TbLockX } from 'react-icons/tb'
-import { useNavigate } from 'react-router-dom'
-import { login } from '../../../Slices/auth/auth'
 import { useDispatch, useSelector } from 'react-redux'
-import Loader from '../../Loader/Loader'
+import { useNavigate } from 'react-router-dom'
+import { EMAIL_REGEX, PWD_REGEX } from '../REGEX/REGEX'
 
+import { TbLockCheck, TbLockX } from 'react-icons/tb'
+import { MdMarkEmailRead, MdMarkEmailUnread } from 'react-icons/md'
+import { ButtonLargeBlue } from '../../Buttons'
+import { login } from '../../../Slices/auth/auth'
+import { AppleSvg, EmailSvgSvg, FacebookSvg, GoogleSvg, PasswordSvg } from '../../../static/icons'
+import AuthInput from '../../AuthInput'
+import Loader from '../../Loader/Loader'
+import { clearMessage } from '../../../Slices/auth/message'
+
+import './signIn.css'
 
 const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
     
@@ -61,7 +64,6 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
         })
 
         .catch(() => {
-
         })
 
         setEmail('');
@@ -99,8 +101,9 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
         // setEmail('')
         // }
     }
-
-
+    useEffect(()=> {
+        dispatch(clearMessage());
+    },[dispatch])
 
     if(loading) {
         return <Loader/>
@@ -126,12 +129,15 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
                             <label  htmlFor="email" className='label-name'>Email</label>
                             <div className="input-container">
                                 <div className="icon-container left">
-                                    {/* <EmailSvgSvg /> */}
                                     <EmailSvgSvg className={validEmail  || email  ?'hide' : '' }/>
-                                    <MdMarkEmailUnread   className={validEmail || !email ? 'hide' : 'invalid'}/>
+                                    <MdMarkEmailUnread  className={validEmail || !email ? 'hide' : 'invalid'}/>
                                     <MdMarkEmailRead className={validEmail ?  'valid' : 'hide'}/>
                                 </div>
-                                <input type='email'  placeholder='enter you email address'
+                                <AuthInput type={"email"} placeholder={'enter you email address'}
+                                    id={'email'} ref={emailRef} autoComplete={'off'}    
+                                    value={email} onChange={(e) => setEmail(e.target.value)}
+                                />
+                                {/* <input type='email'  placeholder='enter you email address'
                                     id='email'
                                     ref={emailRef}
                                     autoComplete='off'
@@ -139,7 +145,7 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     required
-                                />
+                                /> */}
                             </div>
                         </div>
                         <div className="form-group">
@@ -151,12 +157,14 @@ const SignIn = ({setAction, InputType, Icon, handleClickShowPassword }) => {
                                     <TbLockX className={validPassword || !password ? 'hide' : 'invalid'}/>
                                     <TbLockCheck className={validPassword ?  'valid' : 'hide'}/>
                                 </div>
-                                <input id='password' type={InputType}  placeholder='enter you password'
+                                <AuthInput id={password} type={InputType}  placeholder={'enter you password'} 
+                                    onChange={(e) => setPassword(e.target.value)}/>
+                                {/* <input id='password' type={InputType}  placeholder='enter you password'
                                     onChange={(e) => setPassword(e.target.value)}
                                     // value={password}
                                     // arial-onInvalid={validPassword ? 'false' : 'true'}
                                     required
-                                />
+                                /> */}
                                 <div className="auth-icon_container right" onClick={handleClickShowPassword} >
                                     {Icon}
                                 </div>

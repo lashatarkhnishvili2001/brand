@@ -2,8 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import shirt from  '../../../Assets/images/CartBitmap.png';
-import { Heading, Heading4, Heading5, Heading6, Subheading } from '../../Headings';
-import { ButtonLargeBlue, ButtonLargeWhite, ButtonLargeWhiteIcon, ButtonSmallWhite } from '../../Buttons';
+import { Heading, Heading4, Heading5, Heading6, Subheading, Subheading1 } from '../../Headings';
+import { ButtonLargeBlue, ButtonLargeWhite, ButtonLargeWhiteIcon, ButtonNormalWhite, ButtonSmallWhite } from '../../Buttons';
 import { AddSvg, BackCartSvg, LogoPPaySvg, LogoPaySvg, PaymentPaySvg, RemoveSvg, VisaPaySvg } from '../../../static/icons';
 
 import { getCartProducts } from '../../../store/getMyCartProducts/getMyCartProducts'
@@ -122,20 +122,25 @@ const CartProduct = () => {
                 )}
 
                 <div className="cart-pay-col"> 
+                    <div className="cartApple">
+                        <Subheading1 text={'Have a coupon?'}/>
+                        <div className="coupon-input">
+                                    <input type="text" placeholder="Add coupon"/>
+                                    <ButtonNormalWhite text={'Apply'}/>
+                            </div>
+                    </div>
                     <div className="cart-pay-info">
                         <div className="cart-pay-row">
-                            <Subheading  text={'Subtotal:'} classnames = '' styles={{
-                                color:'red'
-                            }}/>
+                            <Subheading  text={'Subtotal:'} classnames = '' />
                             <Subheading text={`$${Math.round(totalPrice * 100) / 100}`} />
                         </div>
                         <div className="cart-pay-row">
                             <Subheading text={'Discount'}/>
-                            <Subheading text={'- $60.00'}/>
+                            <Subheading text={'- $60.00'} styles={{color:'red'}}/>
                         </div>
                         <div className="cart-pay-row">
                             <Subheading text={'Tax:'}/>
-                            <Subheading text={'+ $14.00'}/>
+                            <Subheading text={'+ $14.00'} styles={{color:'green'}}/>
                         </div>
                         <div className="cart-total-pay">
                             <Heading6 text={'Total:'}/>

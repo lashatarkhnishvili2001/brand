@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './cardRight.css'
 import userImg from '../../../../Assets/images/Avatar.png'
 import { ButtonSmallBlue, ButtonSmallWhite } from '../../../Buttons'
 import { Heading6 } from '../../../Headings'
 import { Link, useNavigate } from 'react-router-dom'
 import { Modal } from 'antd'
+import { useSelector } from 'react-redux'
 
 const CardRight = ({userToken, logOut}) => {
+  const {isLoggedIn} = useSelector((state) => state.auth)
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -36,7 +38,8 @@ const CardRight = ({userToken, logOut}) => {
           <>
           <div className="user">
             <img src={userImg} alt="" />
-            <span>Hi, user</span>
+            <span>Hi, {isLoggedIn? "admin" : 'user'}</span>
+            {/* <span>Hi, user</span> */}
           </div>
               <ButtonSmallWhite text={'Log out'} onClick={showModal}/>
               <Modal 

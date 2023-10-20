@@ -1,15 +1,12 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk  } from "@reduxjs/toolkit";
 
-export const getCartProducts = createAsyncThunk('cart/getCartProducts', async (userToken, id) => {
+export const getCartProducts = createAsyncThunk('cart/getCartProducts', async (userToken) => {
     try {
         const response = await axios.get('https://amazon-digital-prod.azurewebsites.net/api/cart/getmycartproducts',
         {headers: {
             Authorization: `Bearer ${userToken}`,
         }},
-        {body: JSON.stringify({
-            productId: id
-        })}
         );
         return response.data
     }catch (error) {
