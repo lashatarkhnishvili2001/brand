@@ -53,7 +53,6 @@ const MainSideRight = ({view, setView, products, params } ) => {
                 ) : ( 
                     <ProductsCol products={products} /> 
                 )}
-
             </div>
             )
 }

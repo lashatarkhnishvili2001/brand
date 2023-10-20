@@ -63,6 +63,12 @@
     margin-top: 20px;
 }
 
+.button-none{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 @media (max-width: 1415px) {
     .seller-main{
         width: 100%;

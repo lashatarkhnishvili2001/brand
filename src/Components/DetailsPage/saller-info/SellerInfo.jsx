@@ -34,9 +34,7 @@ const SellerInfo = ({handleAddToCart , id, handleAuthAlert, isLoggedIn}) => {
                 </ul>
             </div>
             <div className="button-none">
-                {isLoggedIn ? (<ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'Send inquiry'} />) : (<ButtonNormalBlue onClick={() => {handleAuthAlert()}} text={'Send inquiry'} />)}
-                
-                
+                {isLoggedIn ? (<ButtonNormalBlue onClick={() => {handleAddToCart(id)}} text={'add to cart'} />) : (<ButtonNormalBlue onClick={() => {handleAuthAlert()}} text={'Send inquiry'} />)}
                 <ButtonNormalWhite text={'Seller’s profile'} />
             </div>
         </div>

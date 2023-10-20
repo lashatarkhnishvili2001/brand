@@ -73,7 +73,7 @@ const Navbar = ({cartProducts, userToken}) => {
                     {/* </NavLink> */}
                 </li>
                 {isLoggedIn ? (<li className="navbar-li active dot">
-                    {/* <NavLink className={"nav-link"} to="/Cart"> */}
+                    <div className="nav-link">
                         <div className="item-container cart-my-cart" id="cart-icon " onClick={() => navigate('/Cart')}>
                             <div className="image-container" >
                                 <img src={Cart} alt="" />
@@ -85,7 +85,7 @@ const Navbar = ({cartProducts, userToken}) => {
                             </div>
                             )}
                         </div>
-                    {/* </NavLink> */}
+                    </div>
                 </li>) : (
                     <li className="navbar-li active dot">
                         <div className="item-container cart-my-cart" onClick={() => showModal()} id="cart-icon">
