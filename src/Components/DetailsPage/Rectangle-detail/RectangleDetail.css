@@ -37,6 +37,9 @@
     justify-content: center;
     align-items: center;
 }
+.RectangleDetail ul li .listRow .image img{
+    width: 100%;
+}
 
 .listRow .destination .black .subheading{
     color: #000;
