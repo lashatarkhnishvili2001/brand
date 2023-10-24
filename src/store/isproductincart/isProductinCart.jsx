@@ -1,8 +1,8 @@
 // import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// export const getCartCheck = createAsyncThunk ("cartCheck/getCartCheck", async (itemId) => {
+// export const getCartCheck = createAsyncThunk ("cartCheck/getCartCheck", async (id) => {
 //     const userToken = JSON.parse(localStorage.getItem('userToken'))
-//     return fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/isproductincart/${itemId}`,{
+//     return fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/isproductincart/${id}`,{
 //             headers: {
 //             'Content-Type': 'application/json',
 //             Authorization: `Bearer ${userToken}`
