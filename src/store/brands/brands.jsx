@@ -4,7 +4,7 @@
 
 // export const getBrands = createAsyncThunk('products/getBrands', async () => {
 //     try {
-//         const response = await axios.get('http://digital-amazon-test.somee.com/api/product/products/');
+//         const response = await axios.get('https://digitalinstitute-amazon.azurewebsites.net/api/product/products/');
 //         let data = response.data 
 //         return data 
 //     }catch (error) {

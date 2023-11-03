@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const removeFromCart = createAsyncThunk('cart/removeFromCart', async ({id, userToken}) => {
     try{
-        const response = await fetch(`https://amazon-digital-prod.azurewebsites.net/api/cart/removefromcart`,
+        const response = await fetch(`https://digitalinstitute-amazon.azurewebsites.net/api/cart/removefromcart`,
         {
             method: 'DELETE',
             headers: {
