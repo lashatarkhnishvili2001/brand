@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import Api from "../../Api/axios.js"
 
 export const addItemToCart = createAsyncThunk('cart/addInCart', async ({ id, token}) => {
     try {
-        const response = await axios.post('https://digitalinstitute-amazon.azurewebsites.net/api/cart/addincart', 
+        const response = await Api.post('/cart/addincart', 
         {
             productId: id 
         },

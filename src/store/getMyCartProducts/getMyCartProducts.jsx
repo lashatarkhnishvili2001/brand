@@ -1,9 +1,10 @@
 import axios from "axios";
 import { createSlice, createAsyncThunk  } from "@reduxjs/toolkit";
+import Api from "../../Api/axios.js"
 
 export const getCartProducts = createAsyncThunk('cart/getCartProducts', async (userToken) => {
     try {
-        const response = await axios.get('https://digitalinstitute-amazon.azurewebsites.net/api/cart/getmycartproducts',
+        const response = await Api.get('/cart/getmycartproducts',
         {headers: {
             Authorization: `Bearer ${userToken}`,
         }},

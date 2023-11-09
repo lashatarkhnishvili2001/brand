@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import Api from "../../Api/axios.js"
 
 export const getUserInfo = createAsyncThunk('user/getUserInfo', async (email) => {
     try {
-        const response = await axios.post('https://digitalinstitute-amazon.azurewebsites.net/api/user/getByEmail',
+        const response = await Api.post('/user/getByEmail',
         {
             email
         },

@@ -54,7 +54,7 @@ const Details = () => {
                 <RectangleDetail/>
             </div>
             <RelatedProducts/>
-            <BannerBlue/>
+            <BannerBlue/>   
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+// import axios from "axios";
+import Api from "../../Api/axios.js"
 
 export const getDetails = createAsyncThunk('products/getDetails', async (id) => {
     try {
-        const response = await axios.get(`https://digitalinstitute-amazon.azurewebsites.net/api/product/products/${id}`);
+        const response = await Api.get(`/product/products/${id}`);
         
         return response.data
     }catch (error) {
